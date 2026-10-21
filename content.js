@@ -44,16 +44,78 @@ const SITE = {
     }
   },
 
-  /* ---------- Navigation (shared by every page) ---------- */
+  /* ---------- Navigation (shared by every page) ----------
+     "children" render as a dropdown under the section on desktop
+     and as an accordion group on mobile. Items deep-link to
+     section anchors on the section's own page. */
   nav: [
     { label: "Home", href: "index.html", key: "home" },
-    { label: "About", href: "about.html", key: "about" },
-    { label: "Academics", href: "academics.html", key: "academics" },
-    { label: "Admissions", href: "admissions.html", key: "admissions" },
-    { label: "Campus", href: "campus.html", key: "campus" },
-    { label: "School Life", href: "school-life.html", key: "school-life" },
-    { label: "Gallery", href: "gallery.html", key: "gallery" },
-    { label: "News", href: "news.html", key: "news" },
+    {
+      label: "About", href: "about.html", key: "about",
+      children: [
+        { label: "Our School", href: "about.html" },
+        { label: "Mission & Values", href: "about.html#values" },
+        { label: "Crest & Motto", href: "about.html#crest" },
+        { label: "History", href: "about.html#timeline" },
+        { label: "Leadership", href: "about.html#leadership" }
+      ]
+    },
+    {
+      label: "Admissions", href: "admissions.html", key: "admissions",
+      children: [
+        { label: "Admission Process", href: "admissions.html#process" },
+        { label: "Enquiry Form", href: "admissions.html#enquire" },
+        { label: "Documents Required", href: "admissions.html#documents" },
+        { label: "Fees", href: "admissions.html#fees" },
+        { label: "FAQs", href: "admissions.html#faq" }
+      ]
+    },
+    {
+      label: "Academics", href: "academics.html", key: "academics",
+      children: [
+        { label: "Overview", href: "academics.html" },
+        { label: "Pre-Primary", href: "academics.html#preprimary" },
+        { label: "Primary", href: "academics.html#primary" },
+        { label: "Middle School", href: "academics.html#middle" },
+        { label: "Senior School — ICSE & ISC", href: "academics.html#senior" },
+        { label: "Teaching Approach", href: "academics.html#teaching" },
+        { label: "Labs & Learning Spaces", href: "academics.html#labs" }
+      ]
+    },
+    {
+      label: "Campus", href: "campus.html", key: "campus",
+      children: [
+        { label: "Facilities", href: "campus.html" },
+        { label: "Sports Facilities", href: "campus.html#sports" },
+        { label: "Safety & Care", href: "campus.html#safety" }
+      ]
+    },
+    {
+      label: "School Life", href: "school-life.html", key: "school-life",
+      children: [
+        { label: "Events & Celebrations", href: "school-life.html" },
+        { label: "Sports", href: "school-life.html#sports" },
+        { label: "Arts & Activities", href: "school-life.html#arts" },
+        { label: "Clubs & Houses", href: "school-life.html#clubs" }
+      ]
+    },
+    {
+      label: "Gallery", href: "gallery.html", key: "gallery",
+      children: [
+        { label: "School Photos", href: "gallery.html" },
+        { label: "Events", href: "gallery.html#events" },
+        { label: "Campus", href: "gallery.html#campus" }
+      ]
+    },
+    {
+      label: "News", href: "news.html", key: "news",
+      children: [
+        { label: "Notices", href: "news.html" },
+        { label: "Events", href: "news.html#events" },
+        { label: "Parent Voices", href: "news.html#testimonials" },
+        { label: "Follow on Facebook", href: "https://www.facebook.com/dehradunworldschool", external: true }
+      ]
+    },
     { label: "Contact", href: "contact.html", key: "contact" }
   ],
 
@@ -67,8 +129,8 @@ const SITE = {
   /* ================= HOME PAGE ================= */
   home: {
     hero: {
-      image: "images/real/main-building-book-fair.jpg",
-      imageAlt: "The main building of Dehradun World School during a Scholastic book fair",
+      image: "images/real/main-building-flagpole.jpg",
+      imageAlt: "The main building of Dehradun World School and the flagpole",
       eyebrow: "Dehradun · Est. 2008 · CISCE (ICSE & ISC)",
       title: "Dehradun World School",
       tagline: "Discover the world of knowledge",
@@ -211,6 +273,7 @@ const SITE = {
     stages: [
       {
         name: "Pre-Primary",
+        anchor: "preprimary",
         tag: "Montessori",
         classes: "Preschool",
         image: "images/academics-preprimary.jpg",
@@ -219,6 +282,7 @@ const SITE = {
       },
       {
         name: "Primary",
+        anchor: "primary",
         tag: "Foundations",
         classes: "Classes 1–5",
         image: "images/academics-primary.jpg",
@@ -227,6 +291,7 @@ const SITE = {
       },
       {
         name: "Middle School",
+        anchor: "middle",
         tag: "Building depth",
         classes: "Classes 6–8",
         image: "images/academics-middle.jpg",
@@ -235,6 +300,7 @@ const SITE = {
       },
       {
         name: "Senior School",
+        anchor: "senior",
         tag: "ICSE & ISC",
         classes: "Classes 9–12",
         image: "images/academics-senior.jpg",
@@ -394,6 +460,7 @@ const SITE = {
       },
       {
         title: "Outdoor Art Activity",
+        anchor: "arts",
         image: "images/real/outdoor-art-activity.webp",
         imageAlt: "Students drawing and painting on the school lawn",
         text: "On art activity days the lawn becomes the classroom — students spread out with their drawing books in front of the main teaching block, learning in the open Dehradun air."
@@ -442,9 +509,9 @@ const SITE = {
     realHeading: "Dehradun World School, in pictures",
     realItems: [
       { image: "images/real/main-building-book-fair.jpg", caption: "The main building during the Scholastic book fair" },
-      { image: "images/real/entrance-gate.jpg", caption: "The entrance gate — 'Affiliated to the Council for the Indian School Certificate Examinations, New Delhi'" },
+      { image: "images/real/entrance-gate.jpg", anchor: "campus", caption: "The entrance gate — 'Affiliated to the Council for the Indian School Certificate Examinations, New Delhi'" },
       { image: "images/real/main-building-flagpole.jpg", caption: "The main building and the flagpole" },
-      { image: "images/real/annual-function-stage.jpg", caption: "Choir on stage at the annual function" },
+      { image: "images/real/annual-function-stage.jpg", anchor: "events", caption: "Choir on stage at the annual function" },
       { image: "images/real/outdoor-art-activity.webp", caption: "Outdoor art activity on the school lawn" },
       { image: "images/real/targetstudy-crest.jpg", caption: "The school crest — pine tree and the motto तमसो मा ज्योतिर्गमय" }
     ],

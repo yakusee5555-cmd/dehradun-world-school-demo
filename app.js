@@ -28,11 +28,61 @@
     var tc = el("topbarCta");
     if (tc) { tc.textContent = S.topbar.ctaText; tc.href = S.topbar.ctaHref; }
 
-    /* Header nav with active-page state */
+    /* Header nav with active-page state + dropdowns.
+       Sections with children get a dropdown panel (desktop:
+       hover / focus / caret click; mobile: accordion). The
+       parent item of the current page is marked active too. */
     fill("mainNav", S.nav.map(function (n) {
-      var active = n.key === page ? ' class="active" aria-current="page"' : "";
-      return '<a href="' + esc(n.href) + '"' + active + ">" + esc(n.label) + "</a>";
+      var active = n.key === page;
+      var link = '<a class="nav-link' + (active ? " active" : "") + '" href="' + esc(n.href) + '"' +
+        (active ? ' aria-current="page"' : "") + ">" + esc(n.label) + "</a>";
+      if (!n.children || !n.children.length) {
+        return '<div class="nav-item' + (active ? " nav-item-active" : "") + '">' + link + "</div>";
+      }
+      var kids = n.children.map(function (c) {
+        var ext = c.external ? ' target="_blank" rel="noopener"' : "";
+        return '<a href="' + esc(c.href) + '"' + ext + ">" + esc(c.label) + "</a>";
+      }).join("");
+      var cols = n.children.length >= 5 ? " dropdown-cols" : "";
+      return '<div class="nav-item has-drop' + (active ? " nav-item-active" : "") + '">' + link +
+        '<button class="nav-caret" type="button" aria-expanded="false" aria-haspopup="true" aria-label="Toggle the ' +
+        esc(n.label) + ' menu"></button>' +
+        '<div class="dropdown' + cols + '">' + kids + "</div></div>";
     }).join(""));
+
+    /* Dropdown open/close: caret toggles its own item and closes
+       the others; Escape and outside clicks close everything. */
+    var navEl = el("mainNav");
+    function closeDrops(except) {
+      if (!navEl) return;
+      var items = navEl.querySelectorAll(".nav-item.open");
+      for (var i = 0; i < items.length; i++) {
+        if (items[i] !== except) {
+          items[i].classList.remove("open");
+          var b = items[i].querySelector(".nav-caret");
+          if (b) b.setAttribute("aria-expanded", "false");
+        }
+      }
+    }
+    if (navEl) {
+      var carets = navEl.querySelectorAll(".nav-caret");
+      for (var ci = 0; ci < carets.length; ci++) {
+        carets[ci].addEventListener("click", function (ev) {
+          ev.stopPropagation();
+          var item = this.parentNode;
+          var willOpen = !item.classList.contains("open");
+          closeDrops(item);
+          item.classList.toggle("open", willOpen);
+          this.setAttribute("aria-expanded", willOpen ? "true" : "false");
+        });
+      }
+      document.addEventListener("click", function (ev) {
+        if (!ev.target.closest || !ev.target.closest(".nav-item")) closeDrops(null);
+      });
+      document.addEventListener("keydown", function (ev) {
+        if (ev.key === "Escape") closeDrops(null);
+      });
+    }
 
     /* Mobile menu toggle */
     var toggle = el("navToggle"), nav = el("mainNav");
@@ -93,7 +143,7 @@
       var media = ev.image
         ? '<div class="card-media"><img src="' + esc(ev.image) + '" alt="' + esc(ev.imageAlt) + '" loading="lazy"></div>'
         : "";
-      return '<article class="card event-card">' + media + '<div class="card-body"><h3>' + esc(ev.title) +
+      return '<article class="card event-card"' + (ev.anchor ? ' id="' + esc(ev.anchor) + '"' : "") + ">" + media + '<div class="card-body"><h3>' + esc(ev.title) +
         "</h3><p>" + esc(ev.text) + "</p></div></article>";
     }).join("");
   }
@@ -235,7 +285,7 @@
     fill("pageHero", pageHero(A.heroEyebrow, A.heroTitle, A.heroIntro));
     set("stagesHeading", A.stagesHeading);
     fill("acadCards", A.stages.map(function (st) {
-      return '<article class="card acad-card"><div class="card-media"><img src="' + esc(st.image) +
+      return '<article class="card acad-card"' + (st.anchor ? ' id="' + esc(st.anchor) + '"' : "") + '><div class="card-media"><img src="' + esc(st.image) +
         '" alt="' + esc(st.name) + '" loading="lazy"><span class="card-tag">' + esc(st.tag) + "</span></div>" +
         '<div class="card-body"><p class="stage-classes">' + esc(st.classes) + "</p><h3>" + esc(st.name) + "</h3><p>" +
         esc(st.text) + "</p><ul>" + st.points.map(function (pt) { return "<li>" + esc(pt) + "</li>"; }).join("") +
@@ -311,7 +361,7 @@
     fill("pageHero", pageHero(G.heroEyebrow, G.heroTitle, G.heroIntro));
     set("realHeading", G.realHeading);
     fill("realGrid", G.realItems.map(function (g) {
-      return '<figure class="card gallery-card"><img src="' + esc(g.image) + '" alt="' + esc(g.caption) +
+      return '<figure class="card gallery-card"' + (g.anchor ? ' id="' + esc(g.anchor) + '"' : "") + '><img src="' + esc(g.image) + '" alt="' + esc(g.caption) +
         '" loading="lazy"><figcaption>' + esc(g.caption) + "</figcaption></figure>";
     }).join(""));
     set("demoHeading", G.demoHeading);

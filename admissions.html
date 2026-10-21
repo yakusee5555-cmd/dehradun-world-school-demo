@@ -7,10 +7,13 @@
 <meta name="description" content="Admissions at Dehradun World School, Dehradun: four steps, documents, fees on enquiry, FAQs and an enquiry form — Pre-Primary to Class 12. Demo rebuild concept.">
 <meta property="og:title" content="Admissions — Dehradun World School, Dehradun | Demo">
 <meta property="og:description" content="Admissions at Dehradun World School, Dehradun: four steps, documents, fees on enquiry, FAQs and an enquiry form — Pre-Primary to Class 12. Demo rebuild concept.">
-<meta property="og:image" content="images/real/main-building-book-fair.jpg">
+<meta property="og:image" content="images/real/main-building-flagpole.jpg">
 <meta property="og:type" content="website">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body data-page="admissions">
@@ -41,15 +44,17 @@
 
   <section class="section">
     <div class="container">
+      <span class="jump-anchor" id="process"></span>
       <h2 id="admHeading"></h2>
       <ol class="steps" id="admSteps"></ol>
       <div class="adm-grid">
         <div class="adm-notes">
-          <div class="note-card"><h3>Fees</h3><p id="feesNote"></p></div>
-          <div class="note-card"><h3>Documents</h3><p id="documentsNote"></p><ul id="documentsList"></ul></div>
+          <div class="note-card" id="fees"><h3>Fees</h3><p id="feesNote"></p></div>
+          <div class="note-card" id="documents"><h3>Documents</h3><p id="documentsNote"></p><ul id="documentsList"></ul></div>
           <div class="note-card"><h3>Key dates</h3><p id="datesNote"></p></div>
         </div>
         <form class="enquiry-form" id="enquiryForm" novalidate>
+          <span class="jump-anchor" id="enquire"></span>
           <h3 id="formHeading"></h3>
           <p class="form-note" id="formNote"></p>
           <label>Parent name
@@ -78,7 +83,7 @@
     </div>
   </section>
 
-  <section class="section section-tint">
+  <section class="section section-tint" id="faq">
     <div class="container">
       <h2 id="faqHeading"></h2>
       <div class="faq-list" id="faqList"></div>
