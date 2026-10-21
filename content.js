@@ -365,8 +365,8 @@ const SITE = {
       imageAlt: "The school's 2024–25 toppers board, with photographs of the ICSE and ISC toppers and their percentages",
       imageCaption: "The school's toppers board for 2024–25.",
       boards: [
-        { exam: "ICSE — Class X, 2024–25", topper: "Akansha", score: "97.4%", note: "School topper. 63 of the 95 students who appeared scored 80% and above." },
-        { exam: "ISC — Class XII, 2024–25", topper: "Devyani Gaur", score: "96.75%", note: "School topper. 48 of the 85 students who appeared scored 80% and above." }
+        { exam: "ICSE — Class X, 2024–25", topper: "Akansha", score: "97.4%", note: "63 of the 95 students in Class X who appeared scored 80% and above." },
+        { exam: "ISC — Class XII, 2024–25", topper: "Devyani Gaur", score: "96.75%", note: "48 of the 85 students in Class XII who appeared scored 80% and above." }
       ],
       note: "Results as published on the school's toppers board for the 2024–25 session."
     },
