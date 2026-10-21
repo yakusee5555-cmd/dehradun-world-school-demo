@@ -1,14 +1,17 @@
 /* ============================================================
-   DEHRADUN WORLD SCHOOL — DEMO SITE CONTENT
+   DEHRADUN WORLD SCHOOL — DEMO SITE CONTENT (multi-page)
    ------------------------------------------------------------
    EDIT THIS FILE to change anything on the website.
-   Every word, number, photo and link on the page comes from
+   Every word, number, photo and link on every page comes from
    the SITE object below. You do not need to touch any other
    file to update the site's content.
 
    Photos: change the file inside the images/ folder, or point
    "image" to a new file name here. Keep the same file name and
    you don't even need to edit this file.
+
+   Pages: index (Home) · about · academics · admissions ·
+   campus · school-life · gallery · news · contact
    ============================================================ */
 
 const SITE = {
@@ -18,6 +21,10 @@ const SITE = {
     name: "Dehradun World School",
     shortName: "DWS",
     city: "Dehradun",
+    logo: "images/logo.png",
+    tagline: "discover the world of knowledge",
+    motto: "तमसो मा ज्योतिर्गमय",
+    mottoTranslation: "Tamaso Ma Jyotirgamaya — “Lead me from darkness to light”",
     affiliation: "Affiliated to the Council for the Indian School Certificate Examinations (CISCE), New Delhi — ICSE & ISC",
     phoneDisplay: "+91 75790 63656",
     phoneLink: "tel:+917579063656",
@@ -27,55 +34,96 @@ const SITE = {
       "Raipur–Balawala Road,",
       "Dehradun, Uttarakhand 248008"
     ],
-    mapUrl: "https://www.google.com/maps/search/?api=1&query=30.274321,78.106714",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Dehradun+World+School+Bagicha+Nathuawala+Raipur+Balawala+Road+Dehradun+248008",
     officeHours: "Mon–Sat, 8:00 AM – 1:00 PM",
-    officeHoursNote: "Office hours as listed publicly — please confirm with the school office."
+    officeHoursNote: "Office hours as listed publicly — please confirm with the school office.",
+    facebook: {
+      url: "https://www.facebook.com/dehradunworldschool",
+      label: "facebook.com/dehradunworldschool",
+      followers: "6,983 followers"
+    }
   },
+
+  /* ---------- Navigation (shared by every page) ---------- */
+  nav: [
+    { label: "Home", href: "index.html", key: "home" },
+    { label: "About", href: "about.html", key: "about" },
+    { label: "Academics", href: "academics.html", key: "academics" },
+    { label: "Admissions", href: "admissions.html", key: "admissions" },
+    { label: "Campus", href: "campus.html", key: "campus" },
+    { label: "School Life", href: "school-life.html", key: "school-life" },
+    { label: "Gallery", href: "gallery.html", key: "gallery" },
+    { label: "News", href: "news.html", key: "news" },
+    { label: "Contact", href: "contact.html", key: "contact" }
+  ],
 
   /* ---------- Top bar ---------- */
   topbar: {
     text: "Admissions Open — Pre-Primary to Class 12",
-    ctaText: "Enquire Now"
+    ctaText: "Enquire Now",
+    ctaHref: "admissions.html"
   },
 
-  /* ---------- Hero ---------- */
-  hero: {
-    image: "images/hero.jpg",
-    eyebrow: "Dehradun · Est. 2008 · CISCE (ICSE & ISC)",
-    title: "Dehradun World School",
-    subtitle: "A modern education and a nurturing environment where every child grows — intellectually, physically, socially and spiritually.",
-    primaryCta: "Enquire for Admission",
-    secondaryCta: "Call the School",
-    /* Stats: only figures the school / government records support.
-       The student count is a government-record figure (iCBSE/UDISE),
-       not a marketing claim. Edit or remove freely. */
-    stats: [
-      { value: "2008", label: "Established" },
-      { value: "Pre-Primary – XII", label: "Classes offered" },
-      { value: "ICSE & ISC", label: "CISCE curriculum" },
-      { value: "~1,344", label: "Students (govt. records)" }
-    ]
+  /* ================= HOME PAGE ================= */
+  home: {
+    hero: {
+      image: "images/real/main-building-book-fair.jpg",
+      imageAlt: "The main building of Dehradun World School during a Scholastic book fair",
+      eyebrow: "Dehradun · Est. 2008 · CISCE (ICSE & ISC)",
+      title: "Dehradun World School",
+      tagline: "Discover the world of knowledge",
+      subtitle: "A modern education and a nurturing environment where every child grows — intellectually, physically, socially and spiritually.",
+      primaryCta: "Enquire for Admission",
+      primaryHref: "admissions.html",
+      secondaryCta: "Call the School",
+      /* Stats: only figures the school / government records support.
+         The student count is a government-record figure (iCBSE/UDISE),
+         not a marketing claim. Edit or remove freely. */
+      stats: [
+        { value: "2008", label: "Established" },
+        { value: "Pre-Primary – XII", label: "Classes offered" },
+        { value: "ICSE & ISC", label: "CISCE curriculum" },
+        { value: "~1,344", label: "Students (govt. records)" }
+      ]
+    },
+    welcome: {
+      eyebrow: "Welcome to DWS",
+      heading: "A school founded by IIT Delhi alumni, run on values",
+      text: "Dehradun World School is a co-educational CISCE school in Nathuawala, Dehradun — established in 2008 by IIT Delhi alumni and educationalists to give every child a modern education with a special emphasis on moral and ethical values, tolerance and compassion.",
+      image: "images/about.jpg",
+      imageAlt: "Students learning together",
+      linkText: "More about the school",
+      linkHref: "about.html"
+    },
+    stagesHeading: {
+      eyebrow: "Academics",
+      heading: "One journey, Pre-Primary to Class 12",
+      intro: "Four stages, one CISCE curriculum — with compulsory spoken English across the campus and continuous evaluation so no child quietly falls behind.",
+      linkText: "Explore academics",
+      linkHref: "academics.html"
+    },
+    facilitiesHeading: {
+      eyebrow: "Campus & facilities",
+      heading: "Built for learning, designed for safety",
+      linkText: "See the full campus",
+      linkHref: "campus.html",
+      /* Titles must match entries in campus.facilities below. */
+      picks: ["Library", "Atal Tinkering Lab", "Science Lab", "Playground", "CCTV-Secured Campus", "Medical Check-ups"]
+    },
+    eventsHeading: {
+      eyebrow: "School life",
+      heading: "A year full of moments",
+      linkText: "More of school life",
+      linkHref: "school-life.html"
+    },
+    facebookCard: {
+      heading: "Follow the school on Facebook",
+      text: "Celebrations, events and everyday moments from campus — the school's official Facebook page is where DWS shares them first.",
+      buttonText: "Visit the Facebook page"
+    }
   },
 
-  /* ---------- About ---------- */
-  about: {
-    image: "images/about.jpg",
-    eyebrow: "About the school",
-    heading: "A bold initiative by IIT Delhi alumni & educationalists",
-    paragraphs: [
-      "The Dehradun World School, affiliated to the Council for the Indian School Certificate Examinations, is a co-educational school established in 2008 to provide a modern education system and nurturing environment where each child can develop intellectually, physically, socially and spiritually.",
-      "In a short span of time the school has earned a reputation of providing a brilliant academic standard and discipline among its students. The Dehradun World School is a bold initiative by IIT Delhi alumni and educationalists to impart the kind of education that will make the child proficient enough to take on examination for premier institutions in India and abroad. The school recognizes the high standards set by the Council for Indian School Certificate Examination (CISCE), New Delhi. The school provides modern education with a special emphasis on moral and ethical values that helps in nurturing the character of a child, tolerance and compassion.",
-      "The curriculum, teaching methods and evaluation techniques have been evolved by a team of IITians, and have been highly appreciated by parents and the teaching fraternity. The school uses modern teaching methods and tools, with special care for student safety — preschool classrooms are designed with see-through doors, cushioned floors and soft-corner furniture, and the campus is covered by CCTV surveillance, indoors and outdoors."
-    ],
-    highlights: [
-      "Co-educational, English medium",
-      "Founded by IIT Delhi alumni",
-      "Emphasis on moral values, tolerance & compassion",
-      "CCTV-secured campus, indoors and outdoors"
-    ]
-  },
-
-  /* ---------- Pillars ---------- */
+  /* ---------- Pillars (used on Home + About) ---------- */
   pillars: {
     eyebrow: "How a child grows here",
     heading: "Four pillars of a DWS education",
@@ -87,80 +135,180 @@ const SITE = {
     ]
   },
 
-  /* ---------- Academics ---------- */
-  academics: {
-    eyebrow: "Academics",
-    heading: "One journey, Pre-Primary to Class 12",
-    intro: "Every stage follows the CISCE curriculum, with compulsory spoken English across the campus and continuous evaluation so no child quietly falls behind.",
+  /* ================= ABOUT PAGE ================= */
+  aboutPage: {
+    heroEyebrow: "About the school",
+    heroTitle: "About Dehradun World School",
+    heroIntro: "A co-educational CISCE school in Nathuawala, Dehradun — a bold initiative by IIT Delhi alumni and educationalists, established in 2008.",
+    image: "images/about.jpg",
+    imageAlt: "Students learning together",
+    heading: "A bold initiative by IIT Delhi alumni & educationalists",
+    paragraphs: [
+      "The Dehradun World School, affiliated to the Council for the Indian School Certificate Examinations, is a co-educational school established in 2008 to provide a modern education system and nurturing environment where each child can develop intellectually, physically, socially and spiritually.",
+      "In a short span of time the school has earned a reputation of providing a brilliant academic standard and discipline among its students. The Dehradun World School is a bold initiative by IIT Delhi alumni and educationalists to impart the kind of education that will make the child proficient enough to take on examination for premier institutions in India and abroad. The school recognizes the high standards set by the Council for Indian School Certificate Examination (CISCE), New Delhi. The school provides modern education with a special emphasis on moral and ethical values that helps in nurturing the character of a child, tolerance and compassion.",
+      "The curriculum, teaching methods and evaluation techniques have been evolved by a team of IITians, and have been highly appreciated by parents and the teaching fraternity. The school uses modern teaching methods and tools, with special care for student safety — preschool classrooms are designed with see-through doors, cushioned floors and soft-corner furniture, and the campus is covered by CCTV surveillance, indoors and outdoors."
+    ],
+    highlights: [
+      "Co-educational, English medium",
+      "Founded by IIT Delhi alumni",
+      "Emphasis on moral values, tolerance & compassion",
+      "CCTV-secured campus, indoors and outdoors"
+    ],
+    founding: {
+      eyebrow: "Our founding story",
+      heading: "Started by IITians who wanted a different kind of school",
+      paragraphs: [
+        "Dehradun World School began in 2008 as a bold initiative by IIT Delhi alumni and educationalists — people who had themselves been formed by India's premier institutions, and who wanted to build a school that could prepare children to take on examinations for premier institutions in India and abroad.",
+        "That founding team did not just start the school; they evolved its curriculum, teaching methods and evaluation techniques themselves. The result is a school where concept clarity matters more than rote, English is spoken across the campus, and discipline walks hand in hand with warmth."
+      ]
+    },
+    mission: {
+      eyebrow: "Mission & values",
+      heading: "What the school stands for",
+      items: [
+        { initial: "M", title: "Modern education", text: "Modern teaching methods and tools, and a curriculum evolved by a team of IITians — reviewed against the high standards set by CISCE, New Delhi." },
+        { initial: "N", title: "Nurturing environment", text: "A place where each child can develop intellectually, physically, socially and spiritually — known by name, not just by roll number." },
+        { initial: "V", title: "Moral & ethical values", text: "Special emphasis on moral and ethical values that nurture character — honesty, responsibility and self-discipline from the earliest classes." },
+        { initial: "T", title: "Tolerance & compassion", text: "Children grow up together in a co-educational community — learning tolerance, compassion and respect for others as everyday practice." },
+        { initial: "S", title: "Safety, by design", text: "Round-the-clock CCTV surveillance indoors and outdoors, and preschool rooms designed for little children — see-through doors, cushioned floors, soft-corner furniture." }
+      ]
+    },
+    crest: {
+      eyebrow: "The crest & motto",
+      heading: "A pine tree, rising over the hills",
+      text: "The school crest carries a pine tree — a symbol of Dehradun's hills and of growth that is slow, straight and strong — within a laurel wreath, under the school's name. Below it runs the motto from the Brihadaranyaka Upanishad, and on the school's own signboard, its promise in English.",
+      mottoLabel: "Our motto",
+      taglineLabel: "Our tagline"
+    },
+    timeline: {
+      eyebrow: "Milestones",
+      heading: "The journey so far",
+      note: "Milestones as recorded in government recognition records (iCBSE).",
+      items: [
+        { year: "2008", text: "Dehradun World School is founded at Nathuawala, Dehradun by IIT Delhi alumni and educationalists. Primary and Upper-Primary sections receive recognition." },
+        { year: "2010", text: "Secondary and Higher Secondary sections are recognised — DWS becomes a full school through Class 12, offering ICSE (Class X) and ISC (Class XII)." },
+        { year: "Today", text: "A Pre-Primary to Class 12 CISCE school serving around 1,344 students (government records), with a Montessori preschool, laboratories, an Atal Tinkering Lab and a full campus at Nathuawala." }
+      ]
+    },
+    /* LEADERSHIP SLOT — editable placeholder. The school's website
+       publishes no leadership message, and no principal is named on
+       it. Add the real name, photo and message here when the school
+       provides them. Do not fill this with an invented person. */
+    leadership: {
+      eyebrow: "From the school leadership",
+      heading: "A message from the Principal's desk",
+      slotNote: "This space is reserved for a message from the school's leadership. The school has not published one yet — when it does, it belongs here, in the Principal's own words.",
+      slotCta: "Meanwhile, speak with the school office"
+    }
+  },
+
+  /* ================= ACADEMICS PAGE ================= */
+  academicsPage: {
+    heroEyebrow: "Academics",
+    heroTitle: "Academics at DWS",
+    heroIntro: "Every stage follows the CISCE curriculum — ICSE at Class X, ISC at Class XII — with compulsory spoken English across the campus and continuous evaluation so no child quietly falls behind.",
+    stagesHeading: "The four stages",
     stages: [
       {
         name: "Pre-Primary",
         tag: "Montessori",
+        classes: "Preschool",
         image: "images/academics-preprimary.jpg",
-        text: "Learning by doing, the Montessori way — in specially designed preschool rooms with see-through doors, cushioned floors and soft-corner furniture.",
-        points: ["Montessori methods", "Learning by doing", "Safe, purpose-built rooms"]
+        text: "Learning by doing, the Montessori way — in specially designed preschool rooms with see-through doors, cushioned floors and soft-corner furniture, where little children feel safe enough to explore.",
+        points: ["Montessori methods", "Learning by doing", "See-through classroom doors", "Cushioned floors & soft-corner furniture", "CCTV-covered preschool block"]
       },
       {
         name: "Primary",
         tag: "Foundations",
+        classes: "Classes 1–5",
         image: "images/academics-primary.jpg",
-        text: "Strong foundations in language, mathematics and concepts — taught with modern methods and individual attention.",
-        points: ["Concept-first teaching", "Compulsory spoken English", "Individual attention"]
+        text: "Strong foundations in language, mathematics and concepts — taught with modern methods and individual attention, with spoken English from the very start.",
+        points: ["Concept-first teaching", "Compulsory spoken English", "The reading habit, built in the library", "Individual attention in class"]
       },
       {
         name: "Middle School",
         tag: "Building depth",
+        classes: "Classes 6–8",
         image: "images/academics-middle.jpg",
-        text: "Depth in the sciences, mathematics and languages, with lab-based learning and continuous evaluation through tests and feedback.",
-        points: ["Science & ICT labs", "Continuous evaluation", "Atal Tinkering Lab access"]
+        text: "Depth in the sciences, mathematics and languages, with lab-based learning, computer education and continuous evaluation through tests and feedback.",
+        points: ["Integrated science lab work", "ICT & computer lab", "Atal Tinkering Lab", "Continuous evaluation & feedback"]
       },
       {
         name: "Senior School",
         tag: "ICSE & ISC",
+        classes: "Classes 9–12",
         image: "images/academics-senior.jpg",
-        text: "Focused preparation for the ICSE (Class X) and ISC (Class XII) board examinations — and for premier institutions in India and abroad.",
-        points: ["ICSE — Class X", "ISC — Class XII", "Board-focused mentoring"]
+        text: "Focused preparation for the ICSE (Class X) and ISC (Class XII) board examinations — and for the premier institutions in India and abroad that the school's founders set their sights on.",
+        points: ["ICSE — Class X boards", "ISC — Class XII boards", "Board-focused mentoring", "Preparation for premier institutions"]
       }
-    ]
+    ],
+    approach: {
+      eyebrow: "How learning works here",
+      heading: "The DWS way of teaching",
+      items: [
+        { initial: "En", title: "Compulsory spoken English", text: "English is the medium of instruction — and the language of the campus. Parents credit compulsory spoken English with visibly raising their children's standards." },
+        { initial: "Ev", title: "Continuous evaluation", text: "Regular tests and continuous evaluation, with individual attention, so progress is tracked all year — not discovered at report-card time." },
+        { initial: "IIT", title: "Methods evolved by IITians", text: "The curriculum, teaching methods and evaluation techniques were evolved by a team of IITians, and are appreciated by parents and the teaching fraternity." },
+        { initial: "Mt", title: "Modern teaching tools", text: "Modern teaching methods and tools in everyday classroom use — including an ICT lab with internet access for computer learning." }
+      ]
+    },
+    labs: {
+      eyebrow: "Learning by doing",
+      heading: "Labs that make concepts real",
+      items: [
+        { initial: "AT", title: "Atal Tinkering Lab", text: "A dedicated innovation lab where students build, test and tinker — the hands-on heart of the middle and senior school." },
+        { initial: "Sc", title: "Integrated Science Lab", text: "Experiments that turn textbook science into something students can see, touch and question." },
+        { initial: "ICT", title: "ICT & Computer Lab", text: "Computer learning with internet access — digital skills taught as a subject, not an afterthought." }
+      ]
+    },
+    /* ISC STREAMS SLOT: the school has not published its Class 11–12
+       stream list. One unverified directory anecdote mentions
+       Science/Commerce — do NOT state streams as fact. Replace this
+       note with the confirmed list when the school provides it. */
+    streamsNote: {
+      heading: "ISC streams (Classes 11–12)",
+      text: "The school offers the ISC programme at Classes 11–12. The current stream list is best confirmed with the school office — call +91 75790 63656 and they will walk you through the options for your child."
+    },
+    subjectsNote: "Core subjects across the stages follow the standard CISCE curriculum — English, Hindi, Mathematics, Science, Social Studies and Computer Education, with Sanskrit/third language and value education as prescribed by the Council."
   },
 
-  /* ---------- Campus & facilities ----------
-     This list comes from government-reported school records
-     (iCBSE / UDISE). Edit freely as the school confirms more. */
-  facilities: {
-    eyebrow: "Campus & facilities",
-    heading: "A campus built for learning and safety",
-    items: [
-      { initial: "Li", title: "Library", text: "A school library that builds the reading habit from the earliest classes." },
-      { initial: "ICT", title: "ICT & Computer Lab", text: "Computer learning with internet access and modern teaching tools." },
-      { initial: "Sc", title: "Science Lab", text: "An integrated science laboratory for hands-on experiments." },
-      { initial: "AT", title: "Atal Tinkering Lab", text: "A dedicated innovation lab where students build, test and tinker." },
-      { initial: "Sp", title: "Playground & Sports", text: "Ample playground space in the preschool wing and primary block." },
-      { initial: "Se", title: "CCTV-Secured Campus", text: "Round-the-clock CCTV surveillance, indoors and outdoors." },
-      { initial: "Me", title: "Medical Check-ups", text: "Regular medical check-ups for students on campus." },
-      { initial: "Gr", title: "Green Campus", text: "Solar power and rain-water harvesting built into the campus." },
-      { initial: "Sa", title: "Safe by Design", text: "Preschool rooms with see-through doors, cushioned floors, soft-corner furniture — and ramps for accessibility." }
-    ]
-  },
-
-  /* ---------- Admissions ---------- */
-  admissions: {
-    eyebrow: "Admissions",
+  /* ================= ADMISSIONS PAGE ================= */
+  admissionsPage: {
+    heroEyebrow: "Admissions",
+    heroTitle: "Admissions",
+    heroIntro: "Admissions are open from Pre-Primary to Class 12. Start with an enquiry — the school office will guide you from there.",
     heading: "Admission, in four simple steps",
-    intro: "Admissions are open from Pre-Primary to Class 12. Start with an enquiry — the school office will guide you from there.",
     steps: [
       { title: "Enquire", text: "Fill the enquiry form below, or call the school office on +91 75790 63656." },
       { title: "Visit", text: "Visit the campus at Nathuawala, meet the office and see the school in person." },
-      { title: "Register", text: "Complete the registration and submit the required documents at the school office." },
-      { title: "Confirm", text: "After the interaction and document check, confirm your child's admission with the office." }
+      { title: "Interaction / Assessment", text: "A short interaction or assessment for your child, and a document check at the school office." },
+      { title: "Confirm", text: "Complete the admission formalities with the office and confirm your child's seat." }
     ],
     /* HONESTY NOTES — do not replace these with invented details.
-       The school has not published a fee table, a document list or
-       admission dates anywhere. Add the real ones here when the
-       school provides them. */
-    feesNote: "Fee structure: the school does not publish fees online. Please call +91 75790 63656 for the current fee structure — no hidden charges, ask the office directly.",
-    documentsNote: "Documents required: demo placeholder — the school's official document list is not published yet. This line is where the confirmed list will go.",
-    datesNote: "Key dates: demo placeholder — admission dates for the coming session will be added here by the school.",
+       The school has not published a fee table or admission dates
+       anywhere. Add the real ones here when the school provides
+       them. NEVER publish aggregator fee figures. */
+    feesNote: "Fee structure: the school does not publish fees online. Please call +91 75790 63656 for the current fee structure — ask the office directly.",
+    documentsNote: "Documents below are indicative — the school's confirmed list is issued by the office at registration. Please confirm with the school office.",
+    documents: [
+      "Birth certificate of the child (photocopy)",
+      "Previous class report card / marksheet",
+      "Transfer certificate (TC) from the previous school, where applicable",
+      "Passport-size photographs of the child",
+      "Aadhaar card of the child and parents (photocopy)",
+      "Address proof of the parent"
+    ],
+    datesNote: "Admissions typically open in spring (March–April) for the coming session — places fill by class, so please call +91 75790 63656 to confirm the current window and seat availability.",
+    faq: {
+      heading: "Questions parents ask us",
+      items: [
+        { q: "Which board does the school follow?", a: "Dehradun World School is affiliated to CISCE, New Delhi — ICSE at Class X and ISC at Class XII. It is a co-educational, English-medium school." },
+        { q: "Which classes can my child join?", a: "Admissions run from Pre-Primary (Montessori preschool) through Class 12, subject to seat availability in the class. Call +91 75790 63656 to check the class you need." },
+        { q: "What is the fee structure?", a: "The school does not publish fees online. Parents consistently describe the school as quality education at an affordable fee — for the exact current structure, call the school office on +91 75790 63656." },
+        { q: "When do admissions open?", a: "Admissions typically open in spring (March–April). Windows and seats vary by class, so a quick call to +91 75790 63656 is the surest way to confirm." },
+        { q: "How do I visit the campus?", a: "The school is at Bagicha, Nathuawala, Raipur–Balawala Road, Dehradun 248008. Call ahead on +91 75790 63656 and the office will arrange your visit." }
+      ]
+    },
     form: {
       heading: "Enquire for admission",
       note: "Demo form — in this demo your enquiry is not sent anywhere. On the live site it will reach the school office.",
@@ -169,27 +317,150 @@ const SITE = {
     }
   },
 
-  /* ---------- Gallery ----------
-     DEMO PHOTOS: these are placeholder photos (stock images of
-     school life), NOT photos of Dehradun World School — the
-     school's real photos could not be extracted from its current
-     website. Replace every file in images/ with real campus
-     photos as they become available. */
-  gallery: {
-    eyebrow: "Gallery",
-    heading: "Life at school",
-    note: "Demo photos — replace with real Dehradun World School photos in the images folder.",
-    items: [
-      { image: "images/gallery-library.jpg", caption: "The library" },
-      { image: "images/gallery-science.jpg", caption: "In the science lab" },
-      { image: "images/gallery-sports.jpg", caption: "Sports & athletics" },
-      { image: "images/gallery-art.jpg", caption: "Art & craft" },
-      { image: "images/gallery-play.jpg", caption: "Outdoor play" },
-      { image: "images/gallery-reading.jpg", caption: "Reading time" }
+  /* ================= CAMPUS PAGE =================
+     The facilities list comes from government-reported school
+     records (iCBSE / UDISE) plus the school's SchoolsOfDehradun
+     profile for sports facilities. Edit freely as the school
+     confirms more. "Smart Classes" is deliberately NOT listed —
+     government records show 0 digital boards (conflicted claim). */
+  campusPage: {
+    heroEyebrow: "Campus & facilities",
+    heroTitle: "Campus & Facilities",
+    heroIntro: "A full campus at Nathuawala — classrooms, laboratories, a library, playing fields and a security-first design, in the foothills of Dehradun.",
+    heading: "Facilities on campus",
+    facilities: [
+      { initial: "Li", title: "Library", text: "A school library that builds the reading habit from the earliest classes." },
+      { initial: "ICT", title: "ICT & Computer Lab", text: "Computer learning with internet access — 50 functional computers on campus, per government records." },
+      { initial: "Sc", title: "Science Lab", text: "An integrated science laboratory for hands-on experiments." },
+      { initial: "AT", title: "Atal Tinkering Lab", text: "A dedicated innovation lab where students build, test and tinker." },
+      { initial: "Cl", title: "45 Classrooms", text: "Large, ventilated classrooms across five building blocks — 45 classrooms in good condition, per government records." },
+      { initial: "Sp", title: "Playground", text: "A vast playground, with ample play space in the preschool wing and primary block." },
+      { initial: "Se", title: "CCTV-Secured Campus", text: "Round-the-clock CCTV surveillance, indoors and outdoors, across the campus." },
+      { initial: "Me", title: "Medical Check-ups", text: "Regular medical check-ups for students on campus." },
+      { initial: "Gr", title: "Green Campus", text: "Solar power and rain-water harvesting built into the campus." },
+      { initial: "Sa", title: "Safe & Accessible by Design", text: "Preschool rooms with see-through doors, cushioned floors and soft-corner furniture — plus ramps and handrails for accessibility, and clean drinking water." }
+    ],
+    photos: {
+      heading: "The campus, as it is",
+      items: [
+        { image: "images/real/main-building-flagpole.jpg", caption: "The main building and flagpole" },
+        { image: "images/real/entrance-gate.jpg", caption: "The school entrance gate, Nathuawala" }
+      ]
+    },
+    sports: {
+      eyebrow: "Sports facilities",
+      heading: "Room to run, courts to play on",
+      intro: "Physical development is one of the school's four pillars — and the campus gives it space.",
+      items: [
+        { initial: "Ba", title: "Basketball Court", text: "An outdoor basketball court for games periods, practice and inter-house play." },
+        { initial: "Bd", title: "Badminton Court", text: "A badminton court for a sport Dehradun loves — quick feet, quicker minds." },
+        { initial: "In", title: "Indoor Games", text: "Indoor games facilities for the days the hills decide it rains." },
+        { initial: "Pl", title: "Playground", text: "Open ground for athletics, free play and the everyday running around childhood needs." }
+      ]
+    },
+    safety: {
+      eyebrow: "Safety first",
+      heading: "Designed so parents can relax",
+      items: [
+        "Round-the-clock CCTV surveillance, indoors and outdoors",
+        "Preschool rooms with see-through doors, cushioned floors and soft-corner furniture",
+        "Regular medical check-ups for students",
+        "Ramps and handrails for accessibility",
+        "Clean drinking water and hand-wash facilities"
+      ]
+    }
+  },
+
+  /* ================= SCHOOL LIFE PAGE =================
+     Activities below are ONLY the ones evidenced in real photos
+     or school profiles. Do not add invented events. */
+  schoolLifePage: {
+    heroEyebrow: "School life",
+    heroTitle: "School Life at DWS",
+    heroIntro: "Book fairs and annual functions, art on the lawn and games on the court — the parts of school a child actually remembers.",
+    eventsHeading: "Moments from the school year",
+    events: [
+      {
+        title: "Scholastic Book Fair",
+        image: "images/real/main-building-book-fair.jpg",
+        imageAlt: "Scholastic book fair stands set up in front of the main school building",
+        text: "Scholastic book stands take over the stage in front of the main building — a book fair that puts hundreds of books within reach of every class, and feeds the reading habit the library builds all year."
+      },
+      {
+        title: "Annual Function",
+        image: "images/real/annual-function-stage.jpg",
+        imageAlt: "Students in uniform in choir formation on stage at the annual function",
+        text: "The school's annual function brings students onto one stage — seen here in choir formation, in uniform, under the school crest. The biggest evening of the school year."
+      },
+      {
+        title: "Outdoor Art Activity",
+        image: "images/real/outdoor-art-activity.webp",
+        imageAlt: "Students drawing and painting on the school lawn",
+        text: "On art activity days the lawn becomes the classroom — students spread out with their drawing books in front of the main teaching block, learning in the open Dehradun air."
+      },
+      {
+        title: "Christmas Celebration",
+        image: "",
+        imageAlt: "",
+        text: "Christmas is celebrated at school — one of the festivals that mark the school's year of togetherness, in a community built on tolerance and compassion."
+      }
+    ],
+    sports: {
+      eyebrow: "Sports & games",
+      heading: "Play is a pillar, not a break",
+      intro: "Physical development is one of the four pillars of a DWS education. On campus, children play on the basketball court and the badminton court, compete at indoor games, and run free on the playground.",
+      items: [
+        { title: "Basketball", text: "Court games in sports periods and after-class play." },
+        { title: "Badminton", text: "A court of their own for a game that rewards speed and focus." },
+        { title: "Indoor Games", text: "Facilities for indoor games on rainy hill days." },
+        { title: "Playground Sports", text: "Athletics and free play on the school's open ground." }
+      ]
+    },
+    sportsImage: "images/gallery-sports.jpg",
+    sportsImageAlt: "Sports and athletics (demo photo)",
+    /* CLUBS & HOUSES SLOT: no source anywhere lists the school's
+       clubs or house system. This section is an editable slot —
+       replace with the real list when the school provides it.
+       Do NOT invent house names or club lists. */
+    clubsSlot: {
+      eyebrow: "Clubs & houses",
+      heading: "Clubs, houses & societies",
+      slotNote: "This space is reserved for the school's clubs, houses and societies. When the school shares its list — house names, clubs, and how students join — it will live here. Ask the school office on +91 75790 63656 for what is running this session."
+    }
+  },
+
+  /* ================= GALLERY PAGE =================
+     REAL PHOTOS FIRST — every photo in the "real" group visibly
+     shows Dehradun World School (name board / crest / banner in
+     frame). The "demo" group is stock photography of school
+     life, clearly labelled, for slots the school will fill with
+     its own photos. Never caption a demo photo as the school. */
+  galleryPage: {
+    heroEyebrow: "Gallery",
+    heroTitle: "Gallery",
+    heroIntro: "Real photographs of Dehradun World School first — then demo photos, clearly marked, holding the places the school's own album will fill.",
+    realHeading: "Dehradun World School, in pictures",
+    realItems: [
+      { image: "images/real/main-building-book-fair.jpg", caption: "The main building during the Scholastic book fair" },
+      { image: "images/real/entrance-gate.jpg", caption: "The entrance gate — 'Affiliated to the Council for the Indian School Certificate Examinations, New Delhi'" },
+      { image: "images/real/main-building-flagpole.jpg", caption: "The main building and the flagpole" },
+      { image: "images/real/annual-function-stage.jpg", caption: "Choir on stage at the annual function" },
+      { image: "images/real/outdoor-art-activity.webp", caption: "Outdoor art activity on the school lawn" },
+      { image: "images/real/targetstudy-crest.jpg", caption: "The school crest — pine tree and the motto तमसो मा ज्योतिर्गमय" }
+    ],
+    demoHeading: "School life (demo photos)",
+    demoNote: "Demo photos — stock images of school life, NOT photographs of Dehradun World School. They hold gallery slots until the school's own photos replace them (same file names, in the images folder).",
+    demoItems: [
+      { image: "images/gallery-library.jpg", caption: "Demo photo — the library" },
+      { image: "images/gallery-science.jpg", caption: "Demo photo — in the science lab" },
+      { image: "images/gallery-sports.jpg", caption: "Demo photo — sports & athletics" },
+      { image: "images/gallery-art.jpg", caption: "Demo photo — art & craft" },
+      { image: "images/gallery-play.jpg", caption: "Demo photo — outdoor play" },
+      { image: "images/gallery-reading.jpg", caption: "Demo photo — reading time" }
     ]
   },
 
-  /* ---------- Parent voices ----------
+  /* ---------- Parent voices (Home preview + News page carries full set) ----------
      These are the school's REAL published parent testimonials,
      carried over word-for-word from dehradunworldschool.com. */
   testimonials: {
@@ -205,30 +476,43 @@ const SITE = {
     ]
   },
 
-  /* ---------- Notice board ----------
+  /* ================= NEWS PAGE =================
      DEMO NOTICES: samples only, so the board doesn't ship empty.
-     Replace with real school notices in this file. */
-  notices: {
-    eyebrow: "Notice board",
-    heading: "Notices & updates",
-    note: "Demo notices — replace these with real school notices in content.js.",
-    items: [
+     Replace with real school notices in this file. No dates are
+     shown on purpose — the school publishes no notice dates. */
+  newsPage: {
+    heroEyebrow: "News & notices",
+    heroTitle: "News & Notices",
+    heroIntro: "Announcements from the school office — and the school's Facebook page, where DWS posts its everyday news first.",
+    noticesHeading: "Notice board",
+    noticesNote: "Demo notices — replace these with real school notices in content.js.",
+    notices: [
       { tag: "Admissions", text: "Admissions open — Pre-Primary to Class 12. Call +91 75790 63656 to enquire." },
       { tag: "Demo notice", text: "Sample notice: school office is open Mon–Sat, 8:00 AM – 1:00 PM." },
       { tag: "Demo notice", text: "Sample notice: replace this line with the school's next real announcement." }
-    ]
+    ],
+    eventsHeading: "From the school year",
+    eventsNote: "The moments the school's own photographs record — see the full set on the School Life page."
   },
 
-  /* ---------- Contact ---------- */
-  contact: {
-    eyebrow: "Visit us",
-    heading: "Contact the school",
-    mapCta: "Open in Google Maps"
+  /* ================= CONTACT PAGE ================= */
+  contactPage: {
+    heroEyebrow: "Visit us",
+    heroTitle: "Contact the School",
+    heroIntro: "Call, write, or come and see the campus at Nathuawala — the office is happy to help with admissions and everything else.",
+    heading: "Get in touch",
+    mapCta: "Open in Google Maps",
+    facebookLabel: "Follow us on Facebook",
+    admissionsCard: {
+      heading: "Applying for admission?",
+      text: "Start with the enquiry form — or call the office and they will guide you through the four steps.",
+      buttonText: "Go to Admissions"
+    }
   },
 
   /* ---------- Footer ---------- */
   footer: {
-    demoNote: "Demo website — rebuild concept for Dehradun World School. Photos are demo placeholders; content is editable in content.js.",
+    demoNote: "Demo website — rebuild concept for Dehradun World School. Real school photos lead the gallery; stock photos are clearly marked demo placeholders. Content is editable in content.js.",
     credit: "Concept redesign — not the school's official website."
   }
 };

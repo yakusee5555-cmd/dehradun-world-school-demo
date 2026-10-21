@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admissions — Dehradun World School, Dehradun | Demo</title>
+<meta name="description" content="Admissions at Dehradun World School, Dehradun: four steps, documents, fees on enquiry, FAQs and an enquiry form — Pre-Primary to Class 12. Demo rebuild concept.">
+<meta property="og:title" content="Admissions — Dehradun World School, Dehradun | Demo">
+<meta property="og:description" content="Admissions at Dehradun World School, Dehradun: four steps, documents, fees on enquiry, FAQs and an enquiry form — Pre-Primary to Class 12. Demo rebuild concept.">
+<meta property="og:image" content="images/real/main-building-book-fair.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="admissions">
+
+<div class="topbar">
+  <span class="topbar-text" id="topbarText"></span>
+  <span class="topbar-links">
+    <a id="topbarPhone" href="#"></a>
+    <a class="topbar-cta" href="admissions.html" id="topbarCta"></a>
+  </span>
+</div>
+
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img class="brand-logo" src="images/logo.png" alt="Dehradun World School crest">
+    <span class="brand-text">
+      <strong>Dehradun World School</strong>
+      <small>CISCE · ICSE &amp; ISC · Dehradun</small>
+    </span>
+  </a>
+  <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav">Menu</button>
+  <nav class="main-nav" id="mainNav" aria-label="Main"></nav>
+</header>
+
+<main>
+
+  <div id="pageHero"></div>
+
+  <section class="section">
+    <div class="container">
+      <h2 id="admHeading"></h2>
+      <ol class="steps" id="admSteps"></ol>
+      <div class="adm-grid">
+        <div class="adm-notes">
+          <div class="note-card"><h3>Fees</h3><p id="feesNote"></p></div>
+          <div class="note-card"><h3>Documents</h3><p id="documentsNote"></p><ul id="documentsList"></ul></div>
+          <div class="note-card"><h3>Key dates</h3><p id="datesNote"></p></div>
+        </div>
+        <form class="enquiry-form" id="enquiryForm" novalidate>
+          <h3 id="formHeading"></h3>
+          <p class="form-note" id="formNote"></p>
+          <label>Parent name
+            <input type="text" name="parent" required placeholder="Your full name">
+          </label>
+          <label>Phone number
+            <input type="tel" name="phone" required placeholder="10-digit mobile number">
+          </label>
+          <label>Class applying for
+            <select name="class" required>
+              <option value="">Select class</option>
+              <option>Pre-Primary</option>
+              <option>Class 1</option><option>Class 2</option><option>Class 3</option>
+              <option>Class 4</option><option>Class 5</option><option>Class 6</option>
+              <option>Class 7</option><option>Class 8</option><option>Class 9</option>
+              <option>Class 10</option><option>Class 11</option><option>Class 12</option>
+            </select>
+          </label>
+          <label>Message <span class="optional">(optional)</span>
+            <textarea name="message" rows="3" placeholder="Anything you'd like to ask the school office"></textarea>
+          </label>
+          <button type="submit" class="btn btn-green btn-block" id="formButton"></button>
+          <p class="form-success" id="formSuccess" hidden></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="container">
+      <h2 id="faqHeading"></h2>
+      <div class="faq-list" id="faqList"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <img class="footer-logo" src="images/logo.png" alt="Dehradun World School crest">
+      <div>
+        <strong id="footerName"></strong>
+        <p id="footerAff"></p>
+        <p id="footerAddress"></p>
+      </div>
+    </div>
+    <div>
+      <p><a id="footerPhone" href="#"></a></p>
+      <p><a id="footerEmail" href="#"></a></p>
+      <p><a id="footerFb" href="#" target="_blank" rel="noopener"></a></p>
+    </div>
+    <nav class="footer-nav" id="footerNav" aria-label="Footer"></nav>
+  </div>
+  <div class="container footer-demo">
+    <p id="footerDemo"></p>
+    <p id="footerCredit"></p>
+  </div>
+</footer>
+
+<div class="mobile-bar">
+  <a class="mobile-call" id="mobileCall" href="#">Call Now</a>
+  <a class="mobile-enquire" id="mobileEnquire" href="admissions.html">Enquire</a>
+</div>
+
+<script src="content.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
