@@ -327,6 +327,22 @@ const SITE = {
         { initial: "ICT", title: "ICT & Computer Lab", text: "Computer learning with internet access — digital skills taught as a subject, not an afterthought." }
       ]
     },
+    /* BOARD RESULTS — every figure below is printed on the
+       school's own published 2024–25 toppers board (the photograph
+       is the results figure on this page, and sits in the
+       gallery). Nothing here comes from anywhere else. */
+    results: {
+      eyebrow: "Board results",
+      heading: "The Class of 2024–25",
+      image: "images/real/up-toppers-2025.jpg",
+      imageAlt: "The school's 2024–25 toppers board, with photographs of the ICSE and ISC toppers and their percentages",
+      imageCaption: "The school's toppers board for 2024–25.",
+      boards: [
+        { exam: "ICSE — Class X, 2024–25", topper: "Akansha", score: "97.4%", note: "School topper. 63 of the 95 students who appeared scored 80% and above." },
+        { exam: "ISC — Class XII, 2024–25", topper: "Devyani Gaur", score: "96.75%", note: "School topper. 48 of the 85 students who appeared scored 80% and above." }
+      ],
+      note: "Results as published on the school's toppers board for the 2024–25 session."
+    },
     /* ISC STREAMS SLOT: the school has not published its Class 11–12
        stream list. One unverified directory anecdote mentions
        Science/Commerce — do NOT state streams as fact. Replace this
@@ -412,7 +428,9 @@ const SITE = {
         { image: "images/real/main-building-flagpole.jpg", caption: "The main building and flagpole" },
         { image: "images/real/entrance-gate.jpg", caption: "The school entrance gate, Nathuawala" },
         { image: "images/real/maps-courtyard-pano.jpg", caption: "The playing field, courtyard and basketball hoop (Google Maps photo)" },
-        { image: "images/real/maps-assembly-2017.jpg", caption: "Students assembled on the ground in front of the main building (Google Maps photo, 2017)" }
+        { image: "images/real/maps-assembly-2017.jpg", caption: "Students assembled on the ground in front of the main building (Google Maps photo, 2017)" },
+        { image: "images/real/up-campus-welcome.jpg", caption: "The main building and courtyard — welcome back to school" },
+        { image: "images/real/up-ground-gathering.jpg", caption: "The school ground at a full-school gathering, by the flagpole" }
       ]
     },
     sports: {
@@ -481,9 +499,45 @@ const SITE = {
       },
       {
         title: "Christmas Celebration",
-        image: "images/real/maps-christmas-2019.jpg",
-        imageAlt: "Children wearing Santa hats in front of the decorated stage at the school's Christmas celebration",
-        text: "Christmas is celebrated at school — children in Santa hats before a decorated stage, one of the festivals that mark the school's year of togetherness, in a community built on tolerance and compassion. (Photograph from the school's Google Maps listing, December 2019.)"
+        image: "images/real/up-christmas-stage.jpg",
+        imageAlt: "The stage dressed for Christmas — a decorated tree, reindeer, Santa's sleigh and wrapped gifts",
+        text: "Christmas is celebrated at school — a stage dressed with a tree, reindeer and Santa's sleigh, one of the festivals that mark the school's year of togetherness, in a community built on tolerance and compassion."
+      },
+      {
+        title: "Janmashtami",
+        image: "images/real/up-janmashtami.jpg",
+        imageAlt: "Young children dressed as Krishna and Radha on the decorated stage for Janmashtami",
+        text: "Janmashtami brings the youngest stars to the stage — children dressed as Krishna and Radha before a flower-ringed backdrop, celebrating the festival together at school."
+      },
+      {
+        title: "Grandparents' Day",
+        image: "images/real/up-grandparents-day.jpg",
+        imageAlt: "The stage decorated with hearts and balloons for Grandparents' Day, beneath the school crest",
+        text: "Grandparents are guests of honour at school — a stage dressed with hearts and balloons beneath the school crest, and a morning that celebrates the people who anchor every family."
+      },
+      {
+        title: "International Dance Day",
+        image: "images/real/up-dance-day-group.jpg",
+        imageAlt: "Students performing a classical group dance on stage for International Dance Day",
+        text: "For International Dance Day the stage fills with classical dance — students in white and pink performing together — and the day's champions take home the trophy."
+      },
+      {
+        title: "Art & Science Exhibition",
+        image: "images/real/up-exhibition-mandala.jpg",
+        imageAlt: "Mandala and dot-art plates made by students, displayed at the Art and Science Exhibition",
+        text: "The annual Art and Science Exhibition covers the ground with student work — mandala plates, painted stones, models and craft — with the whole school walking the tables."
+      },
+      {
+        title: "Kindergarten Graduation",
+        image: "images/real/up-kg-graduation.jpg",
+        imageAlt: "Kindergarten children in graduation caps and gowns holding their scrolls, with their teacher",
+        text: "The youngest students graduate in caps and gowns, scrolls in hand — the Montessori years behind them, Class 1 ahead."
+      },
+      {
+        title: "The School Fete",
+        image: "images/real/up-fete-donut.jpg",
+        imageAlt: "The donut stall at the school fete, under its hand-painted 'Donut Worry, Be Happy' sign",
+        text: "At the school fete the ground turns into a fair — food and games stalls, cold drinks all round, and a donut counter whose only sales pitch is 'Donut Worry, Be Happy'."
       }
     ],
     sports: {
@@ -548,7 +602,29 @@ const SITE = {
       { image: "images/real/maps-courtyard-pano.jpg", caption: "The courtyard, playing field and basketball hoop (Google Maps photo)" },
       { image: "images/real/maps-umbrella-students.jpg", caption: "Students under a festive umbrella by the main building (Google Maps photo)" },
       { image: "images/real/maps-corridor.jpg", caption: "Inside a school corridor (Google Maps photo)" },
-      { image: "images/real/maps-christmas-2019.jpg", caption: "Christmas celebration — Santa hats on stage (Google Maps photo, 2019)" }
+      { image: "images/real/maps-christmas-2019.jpg", caption: "Christmas celebration — Santa hats on stage (Google Maps photo, 2019)" },
+      { image: "images/real/up-toppers-2025.jpg", caption: "The 2024–25 toppers board — ICSE & ISC results" },
+      { image: "images/real/up-olympiad-medals.jpg", caption: "SOF International Social Studies Olympiad — Zonal Medals of Distinction, 2023–24" },
+      { image: "images/real/up-school-medals.jpg", caption: "School medals, engraved with the crest and the main building" },
+      { image: "images/real/up-campus-welcome.jpg", caption: "Welcome back — the main building and courtyard" },
+      { image: "images/real/up-ground-gathering.jpg", caption: "The whole school on the ground, by the flagpole" },
+      { image: "images/real/up-independence-choir.jpg", caption: "Independence Day — the choir before the tricolour" },
+      { image: "images/real/up-janmashtami.jpg", caption: "Janmashtami — little Krishnas and Radhas on stage" },
+      { image: "images/real/up-grandparents-day.jpg", caption: "Grandparents' Day on the school stage" },
+      { image: "images/real/up-stage-dance.jpg", caption: "Classical dance on the school stage" },
+      { image: "images/real/up-dance-day-group.jpg", caption: "International Dance Day — group performance" },
+      { image: "images/real/up-dance-day-duo.jpg", caption: "International Dance Day — classical dancers" },
+      { image: "images/real/up-dance-day-trophy.jpg", caption: "International Dance Day — the junior champion's trophy" },
+      { image: "images/real/up-trophy-stage.jpg", caption: "A trophy presentation on the school stage" },
+      { image: "images/real/up-uttarakhand-day.jpg", caption: "Uttarakhand Foundation Day — folk dance" },
+      { image: "images/real/up-exhibition-board.jpg", caption: "The Art and Science Exhibition" },
+      { image: "images/real/up-exhibition-crafts.jpg", caption: "Student exhibits at the Art and Science Exhibition" },
+      { image: "images/real/up-exhibition-mandala.jpg", caption: "Mandala art at the exhibition" },
+      { image: "images/real/up-kg-graduation.jpg", caption: "Kindergarten graduation — caps, gowns and scrolls" },
+      { image: "images/real/up-christmas-stage.jpg", caption: "Christmas — the decorated stage, tree and sleigh" },
+      { image: "images/real/up-fete-students.jpg", caption: "At the school fete — between the stalls" },
+      { image: "images/real/up-fete-donut.jpg", caption: "The donut stall at the school fete" },
+      { image: "images/real/up-field-games.jpg", caption: "Games on the field — staff take aim at the buckets" }
     ],
     demoHeading: "School life (demo photos)",
     demoNote: "Demo photos — stock images of school life, NOT photographs of Dehradun World School. They hold gallery slots until the school's own photos replace them (same file names, in the images folder).",

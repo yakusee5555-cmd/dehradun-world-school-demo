@@ -298,6 +298,16 @@
     }).join(""));
     fill("labsHead", sectionHead(A.labs.eyebrow, A.labs.heading));
     fill("labsGrid", facCards(A.labs.items, true));
+    fill("resultsHead", sectionHead(A.results.eyebrow, A.results.heading));
+    fill("resultsBody",
+      '<figure class="results-figure"><img src="' + esc(A.results.image) + '" alt="' + esc(A.results.imageAlt) +
+      '" loading="lazy"><figcaption>' + esc(A.results.imageCaption) + "</figcaption></figure>" +
+      '<div class="card-row">' + A.results.boards.map(function (b) {
+        return '<article class="card result-card"><p class="result-exam">' + esc(b.exam) +
+          '</p><p class="result-score">' + esc(b.score) + '</p><p class="result-topper">Topper — ' +
+          esc(b.topper) + "</p><p>" + esc(b.note) + "</p></article>";
+      }).join("") + "</div>" +
+      '<p class="section-intro" style="margin-top:1.2rem">' + esc(A.results.note) + "</p>");
     set("streamsHeading", A.streamsNote.heading);
     set("streamsText", A.streamsNote.text);
     set("subjectsNote", A.subjectsNote);

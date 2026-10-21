@@ -61,6 +61,14 @@ sticky mobile Call / Enquire bar — all rendered by `app.js` from `content.js`.
   aryan's direction along with the v1 soft theme (pill buttons, rounded
   cards) scoped to the home page only. Its alt text says "illustrative
   photo". Everywhere else, real photos lead and stock is marked demo.
+- **Photos supplied directly (Oct 21, 2026):** 22 photographs handed over
+  by aryan (`images/real/up-*.jpg`) — the campus and courtyard, Janmashtami,
+  Grandparents' Day, International Dance Day, the Art & Science Exhibition,
+  the school fete, kindergarten graduation, school and Olympiad medals, and
+  the school's own 2024–25 toppers board. The Academics board-results
+  figures (ICSE topper 97.4%, ISC topper 96.75%, 63/95 and 48/85 at 80%+)
+  come only from that board. The same board prints the school's email as
+  dwsdehradun@gmail.com — the address this site already uses.
 - **Real photos lead.** `images/real/` holds verified photographs of the
   school itself (main building, entrance gate, annual function, outdoor art
   activity, crest). The entrance-gate photo was cropped to remove a
