@@ -106,8 +106,6 @@
     fill("footerNav", S.nav.map(function (n) {
       return '<a href="' + esc(n.href) + '">' + esc(n.label) + "</a>";
     }).join(""));
-    set("footerDemo", S.footer.demoNote);
-    set("footerCredit", S.footer.credit);
 
   }
 

@@ -763,8 +763,4 @@ const SITE = {
   },
 
   /* ---------- Footer ---------- */
-  footer: {
-    demoNote: "Demo website — rebuild concept for Dehradun World School. Real school photos lead the gallery; stock photos are clearly marked demo placeholders. Content is editable in content.js.",
-    credit: "Concept redesign — not the school's official website."
-  }
 };
