@@ -29,6 +29,9 @@ const SITE = {
     phoneDisplay: "+91 75790 63656",
     phoneLink: "tel:+917579063656",
     email: "dwsdehradun@gmail.com",
+    /* Floating WhatsApp button target — the school's own number.
+       Confirm the number is WhatsApp-active before going live. */
+    whatsapp: "https://wa.me/917579063656?text=Hello%2C%20I%20have%20an%20enquiry%20about%20admission%20at%20Dehradun%20World%20School.",
     addressLines: [
       "Bagicha, Nathuawala,",
       "Raipur–Balawala Road,",
@@ -179,6 +182,14 @@ const SITE = {
       heading: "A year full of moments",
       linkText: "More of school life",
       linkHref: "school-life.html"
+    },
+    visit: {
+      eyebrow: "Find us",
+      heading: "Visit the School",
+      mapEmbed: "https://www.google.com/maps?q=Dehradun+World+School+Bagicha+Nathuawala+Raipur+Balawala+Road+Dehradun+248008&output=embed",
+      mapTitle: "Dehradun World School location on Google Maps",
+      directionsText: "Get Directions",
+      directionsHref: "https://www.google.com/maps/dir/?api=1&destination=Dehradun+World+School+Bagicha+Nathuawala+Raipur+Balawala+Road+Dehradun+248008"
     },
     facebookCard: {
       heading: "Follow the school on Facebook",
