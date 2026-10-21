@@ -157,8 +157,8 @@ const SITE = {
       eyebrow: "Welcome to DWS",
       heading: "A school founded by IIT Delhi alumni, run on values",
       text: "Dehradun World School is a co-educational CISCE school in Nathuawala, Dehradun — established in 2008 by IIT Delhi alumni and educationalists to give every child a modern education with a special emphasis on moral and ethical values, tolerance and compassion.",
-      image: "images/about.jpg",
-      imageAlt: "Students learning together",
+      image: "images/real/welcome-courtyard.jpg",
+      imageAlt: "Students gathered in the school courtyard on an event day — Dehradun World School",
       linkText: "More about the school",
       linkHref: "about.html"
     },
