@@ -134,8 +134,8 @@ const SITE = {
   /* ================= HOME PAGE ================= */
   home: {
     hero: {
-      image: "images/hero.jpg",
-      imageAlt: "Stately school building with lawns (illustrative photo)",
+      image: "images/real/hero-school.jpg",
+      imageAlt: "Dehradun World School — the main school building and the school ground",
       eyebrow: "Dehradun · Est. 2008 · CISCE (ICSE & ISC)",
       title: "Dehradun World School",
       tagline: "Discover the world of knowledge",

@@ -59,12 +59,13 @@ entirely on Oct 22, 2026, at the owner's call).
 
 ## Honesty notes (read before this goes anywhere near the public)
 
-- **Home hero exception (Oct 21, aryan's explicit choice):** the home-page
-  hero uses `images/hero.jpg` — the FIRST version's stock photograph of a
-  stately school building that is NOT Dehradun World School — restored at
-  aryan's direction along with the v1 soft theme (pill buttons, rounded
-  cards) scoped to the home page only. Its alt text says "illustrative
-  photo". Everywhere else, real photos lead and stock is marked demo.
+- **Home hero (updated Oct 22, 2026):** the home-page hero is now
+  `images/real/hero-school.jpg` — a real photograph of Dehradun World
+  School's own building and ground, supplied by aryan. (History: on
+  Oct 21 the hero was the FIRST version's stock photo of a different
+  building, kept at aryan's direction with the v1 soft theme; he
+  replaced it with the real building the next night. The v1 soft theme
+  — pill buttons, rounded cards — stays, scoped to the home page.)
 - **Facility card photos (Oct 22, 2026):** the facility/lab/sports cards
   use illustrative stock photos (`images/fac-*.jpg`) — they show the *kind*
   of facility, not the school's own rooms; swap for real room photos when
