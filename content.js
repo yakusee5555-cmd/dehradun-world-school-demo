@@ -410,7 +410,9 @@ const SITE = {
       heading: "The campus, as it is",
       items: [
         { image: "images/real/main-building-flagpole.jpg", caption: "The main building and flagpole" },
-        { image: "images/real/entrance-gate.jpg", caption: "The school entrance gate, Nathuawala" }
+        { image: "images/real/entrance-gate.jpg", caption: "The school entrance gate, Nathuawala" },
+        { image: "images/real/maps-courtyard-pano.jpg", caption: "The playing field, courtyard and basketball hoop (Google Maps photo)" },
+        { image: "images/real/maps-assembly-2017.jpg", caption: "Students assembled on the ground in front of the main building (Google Maps photo, 2017)" }
       ]
     },
     sports: {
@@ -447,6 +449,18 @@ const SITE = {
     eventsHeading: "Moments from the school year",
     events: [
       {
+        title: "Dussehra Celebration",
+        image: "images/real/fb-dussehra-02.jpg",
+        imageAlt: "The Ravan effigy standing on the school ground in front of the main building at the Dussehra celebration",
+        text: "The school celebrated Dussehra on its own ground — a Ravan effigy before the main building, students gathered in the courtyard and watching from the balconies. In the school's words on its Facebook page, the festival is the mark of victory over evil. (October 2026.)"
+      },
+      {
+        title: "Independence Day Celebration",
+        image: "images/real/fb-independence-06.jpg",
+        imageAlt: "Students performing on the outdoor stage in front of the Happy Independence Day India backdrop",
+        text: "Independence Day filled the outdoor stage — dances, a skit, the school choir, speeches and a guitar performance before the tricolour backdrop, with the whole school watching from the ground. Photographs from the school's Facebook page. (August 2026.)"
+      },
+      {
         title: "Scholastic Book Fair",
         image: "images/real/main-building-book-fair.jpg",
         imageAlt: "Scholastic book fair stands set up in front of the main school building",
@@ -467,9 +481,9 @@ const SITE = {
       },
       {
         title: "Christmas Celebration",
-        image: "",
-        imageAlt: "",
-        text: "Christmas is celebrated at school — one of the festivals that mark the school's year of togetherness, in a community built on tolerance and compassion."
+        image: "images/real/maps-christmas-2019.jpg",
+        imageAlt: "Children wearing Santa hats in front of the decorated stage at the school's Christmas celebration",
+        text: "Christmas is celebrated at school — children in Santa hats before a decorated stage, one of the festivals that mark the school's year of togetherness, in a community built on tolerance and compassion. (Photograph from the school's Google Maps listing, December 2019.)"
       }
     ],
     sports: {
@@ -497,9 +511,11 @@ const SITE = {
   },
 
   /* ================= GALLERY PAGE =================
-     REAL PHOTOS FIRST — every photo in the "real" group visibly
-     shows Dehradun World School (name board / crest / banner in
-     frame). The "demo" group is stock photography of school
+     REAL PHOTOS FIRST — every photo in the "real" group is a
+     photograph of Dehradun World School itself: the original
+     verified set, Dussehra and Independence Day photographs from
+     the school's own Facebook page, and photographs from the
+     school's Google Maps listing (harvested October 2026). The "demo" group is stock photography of school
      life, clearly labelled, for slots the school will fill with
      its own photos. Never caption a demo photo as the school. */
   galleryPage: {
@@ -513,7 +529,26 @@ const SITE = {
       { image: "images/real/main-building-flagpole.jpg", caption: "The main building and the flagpole" },
       { image: "images/real/annual-function-stage.jpg", anchor: "events", caption: "Choir on stage at the annual function" },
       { image: "images/real/outdoor-art-activity.webp", caption: "Outdoor art activity on the school lawn" },
-      { image: "images/real/targetstudy-crest.jpg", caption: "The school crest — pine tree and the motto तमसो मा ज्योतिर्गमय" }
+      { image: "images/real/targetstudy-crest.jpg", caption: "The school crest — pine tree and the motto तमसो मा ज्योतिर्गमय" },
+      { image: "images/real/fb-dussehra-01.jpg", caption: "Dussehra — the Ravan effigy, up close" },
+      { image: "images/real/fb-dussehra-02.jpg", caption: "Dussehra — the Ravan effigy on the school ground" },
+      { image: "images/real/fb-dussehra-03.jpg", caption: "Dussehra — students and staff in the courtyard" },
+      { image: "images/real/fb-dussehra-06.jpg", caption: "Dussehra — watching from the school balconies" },
+      { image: "images/real/fb-dussehra-09.jpg", caption: "Dussehra — students seated in the courtyard" },
+      { image: "images/real/fb-dussehra-11.jpg", caption: "Dussehra — the youngest students watch" },
+      { image: "images/real/fb-independence-01.jpg", caption: "Independence Day — students view the decorated display board" },
+      { image: "images/real/fb-independence-02.jpg", caption: "Independence Day — a performance in white" },
+      { image: "images/real/fb-independence-04.jpg", caption: "Independence Day — the school choir on stage" },
+      { image: "images/real/fb-independence-06.jpg", caption: "Independence Day — performing before the tricolour backdrop" },
+      { image: "images/real/fb-independence-08.jpg", caption: "Independence Day — students with the national flag" },
+      { image: "images/real/fb-independence-10.jpg", caption: "Independence Day — a student addresses the school" },
+      { image: "images/real/fb-independence-12.jpg", caption: "Independence Day — group dance on the outdoor stage" },
+      { image: "images/real/fb-independence-17.jpg", caption: "Independence Day — guitar on stage" },
+      { image: "images/real/maps-assembly-2017.jpg", caption: "Students assembled on the ground (Google Maps photo, 2017)" },
+      { image: "images/real/maps-courtyard-pano.jpg", caption: "The courtyard, playing field and basketball hoop (Google Maps photo)" },
+      { image: "images/real/maps-umbrella-students.jpg", caption: "Students under a festive umbrella by the main building (Google Maps photo)" },
+      { image: "images/real/maps-corridor.jpg", caption: "Inside a school corridor (Google Maps photo)" },
+      { image: "images/real/maps-christmas-2019.jpg", caption: "Christmas celebration — Santa hats on stage (Google Maps photo, 2019)" }
     ],
     demoHeading: "School life (demo photos)",
     demoNote: "Demo photos — stock images of school life, NOT photographs of Dehradun World School. They hold gallery slots until the school's own photos replace them (same file names, in the images folder).",
@@ -524,6 +559,22 @@ const SITE = {
       { image: "images/gallery-art.jpg", caption: "Demo photo — art & craft" },
       { image: "images/gallery-play.jpg", caption: "Demo photo — outdoor play" },
       { image: "images/gallery-reading.jpg", caption: "Demo photo — reading time" }
+    ],
+    /* VIDEOS — these live on the school's Facebook page; the rows
+       below link out to the posts there. Only the Dussehra video
+       carries the school's own caption; the August 2026 videos were
+       posted without captions, so none are invented here. */
+    videosHeading: "School videos",
+    videosNote: "Videos are hosted on the school's Facebook page — each row opens the video there.",
+    videos: [
+      { title: "Dussehra celebration", meta: "Facebook video · October 2026 · 1 min 31 sec · 57.6K views", url: "https://www.facebook.com/100066875043296/videos/1816886392780120" },
+      { title: "School video", meta: "Facebook video · August 2026 · 7.1K views", url: "https://www.facebook.com/dehradunworldschool/videos/2585581548550157/" },
+      { title: "School video", meta: "Facebook video · August 2026 · 5.2K views", url: "https://www.facebook.com/dehradunworldschool/videos/1062806229602440/" },
+      { title: "School video", meta: "Facebook video · August 2026 · 4.7K views", url: "https://www.facebook.com/dehradunworldschool/videos/1615904773229204/" },
+      { title: "School video", meta: "Facebook video · August 2026 · 3.8K views", url: "https://www.facebook.com/dehradunworldschool/videos/1374102044830651/" },
+      { title: "School video", meta: "Facebook video · August 2026 · 2.9K views", url: "https://www.facebook.com/dehradunworldschool/videos/1019550544408287/" },
+      { title: "School video", meta: "Facebook video · August 2026 · 2.7K views", url: "https://www.facebook.com/dehradunworldschool/videos/1054029897527193/" },
+      { title: "School video", meta: "Facebook video", url: "https://www.facebook.com/dehradunworldschool/videos/1572486300954655/" }
     ]
   },
 

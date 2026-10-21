@@ -58,7 +58,15 @@ sticky mobile Call / Enquire bar — all rendered by `app.js` from `content.js`.
 - **Real photos lead.** `images/real/` holds verified photographs of the
   school itself (main building, entrance gate, annual function, outdoor art
   activity, crest). The entrance-gate photo was cropped to remove a
-  third-party directory's branding panel. The remaining photos in `images/`
+  third-party directory's branding panel. **October 2026 harvest:** 34 more
+  real photos were downloaded — Dussehra (11) and Independence Day (17) photos
+  downloaded from the school's own Facebook page, and 6 school photos from
+  its Google Maps listing (assembly 2017, courtyard panorama, umbrella
+  group, red-sweater courtyard portrait, corridor, Christmas 2019) — all in
+  `images/real/` with `fb-` / `maps-` prefixes. The Maps listing also
+  carried 4 photos that are NOT the school (city/mountain/farmland views);
+  those were excluded. One Dussehra photo's Facebook CDN link had already
+  expired and could not be downloaded. The remaining photos in `images/`
   are stock school-life photos (Unsplash), used only in activity/gallery
   slots and clearly captioned "Demo photo" in the gallery — never presented
   as the school's campus.
@@ -77,7 +85,11 @@ sticky mobile Call / Enquire bar — all rendered by `app.js` from `content.js`.
   the school itself; the ~1,344 student figure is from government records
   (iCBSE/UDISE), labelled as such on the page.
 - **Facebook** — the school's verified page (facebook.com/dehradunworldschool,
-  6,983 followers) is linked from Home, News and Contact.
+  6,983 followers) is linked from Home, News and Contact. The Gallery page
+  also links 8 of the page's videos (the Dussehra video, 57.6K views, plus
+  August 2026 school videos); videos are linked, not embedded, so nothing
+  breaks if Facebook walls them. One auto-generated "1,500 reactions"
+  celebration clip was deliberately not listed — it is not school footage.
 - **The enquiry form is front-end only** — it shows a success message but
   sends nothing. It needs a backend/form service before real use.
 - The footer carries a **"Demo website — rebuild concept"** note on purpose.

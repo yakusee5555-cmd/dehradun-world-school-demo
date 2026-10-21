@@ -364,6 +364,12 @@
       return '<figure class="card gallery-card"' + (g.anchor ? ' id="' + esc(g.anchor) + '"' : "") + '><img src="' + esc(g.image) + '" alt="' + esc(g.caption) +
         '" loading="lazy"><figcaption>' + esc(g.caption) + "</figcaption></figure>";
     }).join(""));
+    set("videosHeading", G.videosHeading);
+    set("videosNote", G.videosNote);
+    fill("videoList", G.videos.map(function (v) {
+      return '<a class="video-row" href="' + esc(v.url) + '" target="_blank" rel="noopener"><span class="video-title">' +
+        esc(v.title) + '</span><span class="video-meta">' + esc(v.meta) + "</span></a>";
+    }).join(""));
     set("demoHeading", G.demoHeading);
     set("demoNote", G.demoNote);
     fill("demoGrid", G.demoItems.map(function (g) {

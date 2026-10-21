@@ -340,6 +340,16 @@ section[id],article[id],figure[id]{scroll-margin-top:132px}
 }
 .notice p{font-size:.95rem}
 
+/* Videos — flat link rows, same idiom as notices */
+.video-list{display:grid;gap:0;border-top:1px solid var(--line)}
+.video-row{
+  display:flex;flex-wrap:wrap;gap:.3rem 1rem;align-items:baseline;justify-content:space-between;
+  padding:.95rem 0;border-bottom:1px solid var(--line);text-decoration:none;
+}
+.video-title{font-weight:600;color:var(--green-dark);font-size:.98rem}
+.video-row:hover .video-title{color:var(--green);text-decoration:underline}
+.video-meta{color:var(--muted);font-size:.85rem;white-space:nowrap}
+
 /* Contact */
 .contact-grid{display:grid;gap:1.8rem}
 .contact-address{font-style:normal;font-size:1.05rem;font-weight:600;color:var(--green-dark);margin-bottom:1.2rem;line-height:1.55}
