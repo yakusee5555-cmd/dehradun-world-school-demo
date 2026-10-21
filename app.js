@@ -202,7 +202,6 @@
     var H = S.home;
     el("heroImage").src = H.hero.image;
     el("heroImage").alt = H.hero.imageAlt;
-    set("heroEyebrow", H.hero.eyebrow);
     set("heroTitle", H.hero.title);
     set("heroTagline", H.hero.tagline);
     set("heroMotto", S.school.motto + " · " + S.school.mottoTranslation);

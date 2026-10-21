@@ -133,7 +133,6 @@ const SITE = {
     hero: {
       image: "images/real/hero-school.jpg",
       imageAlt: "Dehradun World School — the main school building and the school ground",
-      eyebrow: "Dehradun · Est. 2008 · CISCE (ICSE & ISC)",
       title: "Dehradun World School",
       tagline: "Discover the world of knowledge",
       subtitle: "A modern education and a nurturing environment where every child grows — intellectually, physically, socially and spiritually.",
