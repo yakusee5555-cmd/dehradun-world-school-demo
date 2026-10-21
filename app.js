@@ -175,6 +175,18 @@
       (intro ? '<p class="page-hero-intro">' + esc(intro) + "</p>" : "") + "</div></section>";
   }
 
+  /* Photo slot: shows the photo when one is supplied, otherwise
+     the dashed reserved-slot label. */
+  function fillPhotoSlot(node, photo, alt, label) {
+    if (!node) return;
+    if (photo) {
+      node.classList.add("has-photo");
+      node.innerHTML = '<img src="' + esc(photo) + '" alt="' + esc(alt) + '" loading="lazy">';
+    } else {
+      node.textContent = label;
+    }
+  }
+
   /* ---------- Enquiry form (Admissions page) ---------- */
   function wireForm() {
     var form = el("enquiryForm");
@@ -259,7 +271,7 @@
     fill("dwHead", sectionHead(DW.eyebrow, DW.heading));
     fill("dwText", DW.text ? "<p>" + esc(DW.text) + "</p>"
       : '<p class="dw-note">' + esc(DW.slotNote) + "</p>");
-    set("dwPhotoLabel", DW.photoLabel);
+    fillPhotoSlot(el("dwPhotoSlot"), DW.photo, DW.photoAlt, DW.photoLabel);
     set("dwName", DW.name);
     set("dwRole", DW.role);
   }
@@ -464,7 +476,7 @@
   function renderDirectorsMessage() {
     var D = S.directorsMessagePage;
     fill("pageHero", pageHero(D.heroEyebrow, D.heroTitle, D.heroIntro));
-    set("directorPhotoLabel", D.photoLabel);
+    fillPhotoSlot(el("directorPhotoSlot"), D.photo, D.photoAlt, D.photoLabel);
     set("directorSlotNote", D.slotNote);
   }
 

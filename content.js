@@ -191,15 +191,16 @@ const SITE = {
       directionsText: "Get Directions",
       directionsHref: "https://www.google.com/maps/dir/?api=1&destination=Dehradun+World+School+Bagicha+Nathuawala+Raipur+Balawala+Road+Dehradun+248008"
     },
-    /* Director's Welcome — home page. Name supplied by aryan
-       (Oct 22, 2026). Welcome TEXT left blank at his ask, and
-       there is no photograph of the Director yet — both are
-       reserved slots; drop them in here when they arrive. */
+    /* Director's Welcome — home page. Name AND photograph
+       supplied by aryan (Oct 22, 2026). Welcome TEXT left
+       blank at his ask — drop it in here when it arrives. */
     directorWelcome: {
       eyebrow: "Director's Welcome",
       heading: "A word of welcome",
       text: "",
       slotNote: "The Director's welcome message will appear here.",
+      photo: "images/real/director-photo.jpg",
+      photoAlt: "Mr Hamendra Singh Dawaan, Director of Dehradun World School",
       photoLabel: "Director's photograph",
       name: "Mr Hamendra Singh Dawaan",
       role: "Director"
@@ -381,15 +382,17 @@ const SITE = {
   },
 
   /* ================= DIRECTOR'S MESSAGE PAGE =================
-     Reserved page — aryan asked for it blank (Oct 22, 2026): the
-     Director's message and photograph go here when the school
-     provides them. Do NOT invent a director's name, photograph or
-     message. (The only leadership name on record anywhere is the
+     Reserved page — aryan asked for the MESSAGE blank (Oct 22,
+     2026); his name and photograph were supplied by aryan the
+     same night and are shown. Do NOT invent a director's
+     message. (The only other leadership name on record is the
      principal's, from government records, and it stays off-site.) */
   directorsMessagePage: {
     heroEyebrow: "Academics",
     heroTitle: "Director's Message to Prospective Parents",
     heroIntro: "",
+    photo: "images/real/director-photo.jpg",
+    photoAlt: "Mr Hamendra Singh Dawaan, Director of Dehradun World School",
     photoLabel: "Director's photograph",
     slotNote: "The Director's message to prospective parents will be published on this page."
   },
