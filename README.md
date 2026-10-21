@@ -55,6 +55,12 @@ sticky mobile Call / Enquire bar — all rendered by `app.js` from `content.js`.
 
 ## Honesty notes (read before this goes anywhere near the public)
 
+- **Home hero exception (Oct 21, aryan's explicit choice):** the home-page
+  hero uses `images/hero.jpg` — the FIRST version's stock photograph of a
+  stately school building that is NOT Dehradun World School — restored at
+  aryan's direction along with the v1 soft theme (pill buttons, rounded
+  cards) scoped to the home page only. Its alt text says "illustrative
+  photo". Everywhere else, real photos lead and stock is marked demo.
 - **Real photos lead.** `images/real/` holds verified photographs of the
   school itself (main building, entrance gate, annual function, outdoor art
   activity, crest). The entrance-gate photo was cropped to remove a

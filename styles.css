@@ -151,27 +151,28 @@ section[id],article[id],figure[id]{scroll-margin-top:132px}
 .page-hero h1{color:#fff;font-size:2.1rem;margin-bottom:.5rem}
 .page-hero-intro{color:#D8E6DC;max-width:640px}
 
-/* Home hero — mobile: stacked flow (photo, then content, then
-   stats). Desktop switches to the overlay treatment: text over
-   the photo behind a gradient, stat band along the bottom.
-   (The pre-restyle hero, restored Oct 21 at aryan's request —
-   layout and photo are the old ones; the current Source Serif 4
-   / Inter typefaces are kept.) */
-.hero{position:relative;background:var(--green-deep);color:#fff;overflow:hidden;display:flex;flex-direction:column}
-.hero-media img{width:100%;height:300px;object-fit:cover;object-position:center}
-.hero-overlay{display:none}
-.hero-content{position:relative;padding:1.5rem 1.25rem 1.7rem}
-.hero h1{color:#fff;font-size:2.35rem;margin-bottom:.3rem}
-.hero-tagline{
-  font-family:"Source Serif 4",Georgia,serif;font-weight:500;font-size:1.25rem;
-  color:#EDEAE0;margin-bottom:.35rem;
-}
-.hero-motto{color:#D8E6DC;font-size:.92rem;margin-bottom:.6rem}
+/* Home hero — FIRST-VERSION treatment (restored Oct 21 at
+   aryan's request): the grand building photo, gradient overlay
+   and text over the photo at every size, pill buttons, and the
+   stat band floating along the bottom with rounded corners and
+   a gold hairline. Mobile keeps the same overlay composition,
+   with the content lifted clear of the stat band (the original
+   v1 mobile overlap is deliberately not reproduced). The hero
+   exists only on the home page, so these rules touch nothing
+   else. Typefaces stay Source Serif 4 / Inter. */
+.hero{position:relative;background:var(--green-deep);color:#fff;overflow:hidden}
+.hero-media img{width:100%;height:640px;object-fit:cover;object-position:center}
+.hero-overlay{display:block;position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,32,24,.25) 0%,rgba(11,32,24,.55) 55%,rgba(11,32,24,.92) 100%)}
+.hero-content{position:absolute;left:0;right:0;bottom:224px;padding:0 1.25rem}
+.hero h1{color:#fff;font-size:2.35rem;margin-bottom:.5rem}
+.hero-tagline,.hero-motto{display:none}
 .hero-sub{color:#E4EEE7;max-width:560px;font-size:1.02rem}
 .hero-ctas{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.2rem}
 .stat-band{
-  position:relative;display:grid;grid-template-columns:repeat(2,1fr);
+  position:absolute;left:.9rem;right:.9rem;bottom:.9rem;
+  display:grid;grid-template-columns:repeat(2,1fr);
   background:rgba(11,32,24,.88);border-top:1px solid rgba(201,162,39,.45);
+  border-radius:14px;
 }
 .stat{padding:.8rem 1rem;text-align:center}
 .stat strong{
@@ -179,6 +180,18 @@ section[id],article[id],figure[id]{scroll-margin-top:132px}
   font-size:1.08rem;color:#fff;
 }
 .stat span{font-size:.7rem;letter-spacing:.07em;text-transform:uppercase;color:#BFD4C6}
+
+/* Home page — first-version soft theme, scoped to the home page
+   only (inner pages keep the flat professional treatment):
+   pill buttons, rounded corners, soft shadows. */
+body[data-page="home"] .btn{
+  border-radius:999px;text-transform:none;letter-spacing:0;
+  font-size:.95rem;padding:.8rem 1.5rem;
+}
+body[data-page="home"] .card{border-radius:16px;box-shadow:0 10px 30px rgba(18,41,31,.10)}
+body[data-page="home"] .fac-card{border-radius:16px}
+body[data-page="home"] .fb-card{border-radius:16px;box-shadow:0 10px 30px rgba(18,41,31,.08)}
+body[data-page="home"] .about-media img{border-radius:16px}
 
 /* Split sections (welcome / about) */
 .about-grid{display:grid;gap:1.8rem}
@@ -397,13 +410,10 @@ section[id],article[id],figure[id]{scroll-margin-top:132px}
   body{padding-bottom:0}
   .mobile-bar{display:none}
   h2{font-size:2.05rem}
-  .hero{display:block}
   .hero-media img{height:600px}
-  .hero-overlay{display:block;position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,32,24,.25) 0%,rgba(11,32,24,.55) 55%,rgba(11,32,24,.92) 100%)}
-  .hero-content{position:absolute;inset:auto 0 118px 0;left:50%;transform:translateX(-50%);width:min(1120px,100% - 2.5rem);padding:0}
+  .hero-content{inset:auto 0 118px 0;left:50%;right:auto;transform:translateX(-50%);width:min(1120px,100% - 2.5rem);padding:0}
   .hero h1{font-size:3.2rem}
-  .hero-tagline{font-size:1.45rem}
-  .stat-band{position:absolute;left:50%;transform:translateX(-50%);bottom:0;width:min(1120px,100% - 2.5rem);grid-template-columns:repeat(4,1fr);border-radius:14px 14px 0 0}
+  .stat-band{left:50%;right:auto;transform:translateX(-50%);bottom:0;width:min(1120px,100% - 2.5rem);grid-template-columns:repeat(4,1fr);border-radius:14px 14px 0 0}
   .page-hero{padding:3.4rem 0 2.9rem}
   .page-hero h1{font-size:2.65rem}
   .about-grid{grid-template-columns:1fr 1.2fr;align-items:center}
