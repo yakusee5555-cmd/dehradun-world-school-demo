@@ -20,9 +20,10 @@ browser, or serve the folder with any static server.
 | Online Application (full form) | `application.html` |
 
 Every page shares the same header (school crest + navigation) and footer —
-rendered by `app.js` from `content.js`. A floating WhatsApp button shows on
-desktop viewports only (the sticky mobile Call / Enquire bar was removed
-entirely on Oct 22, 2026, at the owner's call).
+rendered by `app.js` from `content.js`. The sticky mobile Call / Enquire bar
+and the floating WhatsApp button were both removed entirely on Oct 22, 2026,
+at the owner's call — contact happens through the top bar, footer and the
+Contact page.
 
 ## How to edit
 
