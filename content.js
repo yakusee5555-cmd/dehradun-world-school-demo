@@ -98,7 +98,6 @@ const SITE = {
         { label: "Events & Celebrations", href: "school-life.html" },
         { label: "Sports", href: "school-life.html#sports" },
         { label: "Arts & Activities", href: "school-life.html#arts" },
-        { label: "Clubs & Houses", href: "school-life.html#clubs" }
       ]
     },
     {
@@ -610,15 +609,6 @@ const SITE = {
     },
     sportsImage: "images/gallery-sports.jpg",
     sportsImageAlt: "Sports and athletics (demo photo)",
-    /* CLUBS & HOUSES SLOT: no source anywhere lists the school's
-       clubs or house system. This section is an editable slot —
-       replace with the real list when the school provides it.
-       Do NOT invent house names or club lists. */
-    clubsSlot: {
-      eyebrow: "Clubs & houses",
-      heading: "Clubs, houses & societies",
-      slotNote: "This space is reserved for the school's clubs, houses and societies. When the school shares its list — house names, clubs, and how students join — it will live here. Ask the school office on +91 75790 63656 for what is running this session."
-    }
   },
 
   /* ================= GALLERY PAGE =================

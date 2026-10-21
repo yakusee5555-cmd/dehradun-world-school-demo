@@ -397,8 +397,6 @@
     fill("sportsCards", L.sports.items.map(function (s) {
       return '<article class="card pillar-card"><h3>' + esc(s.title) + "</h3><p>" + esc(s.text) + "</p></article>";
     }).join(""));
-    fill("clubsHead", sectionHead(L.clubsSlot.eyebrow, L.clubsSlot.heading));
-    set("clubsNote", L.clubsSlot.slotNote);
   }
 
   function renderGallery() {
