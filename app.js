@@ -109,13 +109,8 @@
     set("footerDemo", S.footer.demoNote);
     set("footerCredit", S.footer.credit);
 
-    /* Sticky mobile bar (present on every page) */
-    var mc = el("mobileCall");
-    if (mc) mc.href = S.school.phoneLink;
-    var me = el("mobileEnquire");
-    if (me) me.href = "admissions.html";
-
-    /* Floating WhatsApp button — every page, bottom-right. */
+    /* Floating WhatsApp button — every page, bottom-right
+       (CSS shows it on desktop viewports only). */
     var wa = document.createElement("a");
     wa.className = "wa-float";
     wa.href = S.school.whatsapp;
@@ -157,10 +152,21 @@
         "</h3><p>" + esc(ev.text) + "</p></div></article>";
     }).join("");
   }
+  /* Facility / lab / sports cards — photo-top cards with a
+     hover zoom + lift and a scroll-reveal (aryan's call,
+     Oct 22, 2026: the old monogram tiles "looked like an AI
+     periodic table"). Falls back to the monogram tile when an
+     item has no photo. The `light` arg is kept for call-site
+     compatibility; cards are white on every background now. */
   function facCards(items, light) {
     return items.map(function (f) {
-      return '<article class="fac-card' + (light ? " fac-card-light" : "") + '"><span class="monogram' +
-        (light ? " monogram-gold" : "") + '">' + esc(f.initial) + "</span><h3>" + esc(f.title) + "</h3><p>" + esc(f.text) + "</p></article>";
+      var media = f.image
+        ? '<div class="fac-media"><img src="' + esc(f.image) + '" alt="' + esc(f.imageAlt || "") +
+          '" loading="lazy"' + (f.imagePos ? ' style="object-position:' + esc(f.imagePos) + '"' : "") + "></div>"
+        : "";
+      var mono = f.image ? "" : '<span class="monogram">' + esc(f.initial) + "</span>";
+      return '<article class="fac-card reveal">' + media + '<div class="fac-body">' + mono +
+        "<h3>" + esc(f.title) + "</h3><p>" + esc(f.text) + "</p></div></article>";
     }).join("");
   }
   function facebookCard() {
@@ -508,4 +514,18 @@
     "directors-message": renderDirectorsMessage, application: renderApplication
   };
   if (renderers[page]) renderers[page]();
+
+  /* Scroll-reveal — elements with .reveal fade/slide in once
+     when they enter the viewport. */
+  var revealNodes = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window && revealNodes.length) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.1 });
+    revealNodes.forEach(function (n) { io.observe(n); });
+  } else {
+    revealNodes.forEach(function (n) { n.classList.add("in"); });
+  }
 })();

@@ -19,8 +19,10 @@ browser, or serve the folder with any static server.
 | Director's Message (blank — reserved) | `directors-message.html` |
 | Online Application (full form) | `application.html` |
 
-Every page shares the same header (school crest + navigation), footer and
-sticky mobile Call / Enquire bar — all rendered by `app.js` from `content.js`.
+Every page shares the same header (school crest + navigation) and footer —
+rendered by `app.js` from `content.js`. A floating WhatsApp button shows on
+desktop viewports only (the sticky mobile Call / Enquire bar was removed
+entirely on Oct 22, 2026, at the owner's call).
 
 ## How to edit
 
@@ -63,6 +65,11 @@ sticky mobile Call / Enquire bar — all rendered by `app.js` from `content.js`.
   aryan's direction along with the v1 soft theme (pill buttons, rounded
   cards) scoped to the home page only. Its alt text says "illustrative
   photo". Everywhere else, real photos lead and stock is marked demo.
+- **Facility card photos (Oct 22, 2026):** the facility/lab/sports cards
+  use illustrative stock photos (`images/fac-*.jpg`) — they show the *kind*
+  of facility, not the school's own rooms; swap for real room photos when
+  the school shares them. Exception: Playground uses the school's own
+  ground photograph (`images/real/up-ground-gathering.jpg`).
 - **Photos supplied directly (Oct 21, 2026):** 22 photographs handed over
   by aryan (`images/real/up-*.jpg`) — the campus and courtyard, Janmashtami,
   Grandparents' Day, International Dance Day, the Art & Science Exhibition,

@@ -24,7 +24,6 @@ html{scroll-behavior:smooth}
 body{
   font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   background:var(--ivory);color:var(--ink);line-height:1.65;
-  padding-bottom:57px; /* room for the sticky mobile bar */
   -webkit-font-smoothing:antialiased;
 }
 img{display:block;max-width:100%}
@@ -101,7 +100,8 @@ section[id],article[id],figure[id]{scroll-margin-top:132px}
 .brand{display:flex;align-items:center;gap:.75rem;text-decoration:none;min-width:0}
 .brand-logo{
   width:52px;height:50px;object-fit:contain;flex:0 0 auto;
-  background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:3px;
+  /* No tile behind the crest — the logo PNG is transparent and
+     sits directly on the header (aryan's call, Oct 22, 2026). */
 }
 .brand-text strong{
   display:block;font-family:"Source Serif 4",Georgia,serif;font-weight:600;
@@ -260,10 +260,28 @@ body[data-page="home"] .about-media img{border-radius:16px}
 
 /* Facility panels */
 .facility-grid{display:grid;grid-template-columns:1fr;gap:1rem}
-.fac-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.35rem;box-shadow:none}
-.fac-card-light{background:var(--green-dark);border:1px solid rgba(255,255,255,.16);box-shadow:none}
-.fac-card-light h3{color:#fff}
-.fac-card-light p{color:#C4D8CB}
+/* Photo-top facility cards — image with hover zoom, card lift,
+   scroll-reveal. (Replaced the monogram "periodic table" tiles,
+   Oct 22, 2026.) */
+.fac-card{
+  background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+  padding:0;overflow:hidden;box-shadow:0 2px 8px rgba(18,41,31,.05);
+  transition:transform .35s ease,box-shadow .35s ease;
+}
+.fac-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(11,32,24,.16)}
+.fac-media{aspect-ratio:16/9;overflow:hidden;background:var(--green-deep)}
+.fac-media img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.fac-card:hover .fac-media img{transform:scale(1.06)}
+.fac-body{padding:1.1rem 1.25rem 1.3rem}
+.fac-body .monogram{margin-bottom:.7rem}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .fac-card,.fac-media img{transition:none}
+  .fac-card:hover{transform:none}
+  .fac-card:hover .fac-media img{transform:none}
+}
 
 /* Photo pairs / gallery */
 .photo-grid{display:grid;grid-template-columns:1fr;gap:1rem}
@@ -333,18 +351,19 @@ body[data-page="home"] .about-media img{border-radius:16px}
 .slot-note{color:var(--muted)}
 
 /* Floating WhatsApp button — every page (added by app.js
-   chrome). On phones it sits above the sticky Call/Enquire
-   bar; on desktop it rests in the corner. */
+   chrome), DESKTOP only: hidden on phones at aryan's call
+   (Oct 22, 2026 — the same night the sticky mobile
+   Call/Enquire bar was removed entirely). */
 .wa-float{
-  position:fixed;right:16px;bottom:72px;z-index:80;
+  position:fixed;right:22px;bottom:22px;z-index:80;
   width:54px;height:54px;border-radius:50%;background:#25D366;
-  display:flex;align-items:center;justify-content:center;
+  display:none;align-items:center;justify-content:center;
   box-shadow:0 6px 18px rgba(11,32,24,.35);
 }
 .wa-float svg{width:30px;height:30px;fill:#fff}
 .wa-float:hover{background:#1FBA59}
 @media (min-width:1100px){
-  .wa-float{bottom:22px;right:22px}
+  .wa-float{display:flex}
 }
 
 /* Home — school location map */
@@ -480,22 +499,8 @@ body[data-page="home"] .about-media img{border-radius:16px}
 .footer-demo{border-top:1px solid rgba(255,255,255,.16);margin-top:1.8rem;padding-top:1.2rem;font-size:.85rem}
 .footer-demo p:first-child{color:var(--gold);font-weight:600}
 
-/* Sticky mobile bar — flat, two divided halves */
-.mobile-bar{
-  position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;
-  border-top:2px solid var(--gold);
-}
-.mobile-bar a{
-  flex:1;text-align:center;text-decoration:none;font-weight:700;
-  padding:1rem .5rem;font-size:.85rem;letter-spacing:.07em;text-transform:uppercase;
-}
-.mobile-call{background:#fff;color:var(--green-deep)}
-.mobile-enquire{background:var(--green-deep);color:#fff;border-left:1px solid rgba(201,162,39,.5)}
-
 /* Layout grids (desktop widths) */
 @media (min-width:900px){
-  body{padding-bottom:0}
-  .mobile-bar{display:none}
   h2{font-size:2.05rem}
   .hero-media img{height:600px}
   .hero-content{inset:auto 0 118px 0;left:50%;right:auto;transform:translateX(-50%);width:min(1120px,100% - 2.5rem);padding:0}
