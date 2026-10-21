@@ -129,8 +129,8 @@ const SITE = {
   /* ================= HOME PAGE ================= */
   home: {
     hero: {
-      image: "images/real/main-building-flagpole.jpg",
-      imageAlt: "The main building of Dehradun World School and the flagpole",
+      image: "images/real/main-building-book-fair.jpg",
+      imageAlt: "The main building of Dehradun World School during a Scholastic book fair",
       eyebrow: "Dehradun · Est. 2008 · CISCE (ICSE & ISC)",
       title: "Dehradun World School",
       tagline: "Discover the world of knowledge",

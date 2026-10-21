@@ -151,27 +151,29 @@ section[id],article[id],figure[id]{scroll-margin-top:132px}
 .page-hero h1{color:#fff;font-size:2.1rem;margin-bottom:.5rem}
 .page-hero-intro{color:#D8E6DC;max-width:640px}
 
-/* Home hero — photo, then a flat deep-green title band,
-   then a flat stat strip with hairline dividers. */
-.hero{background:var(--green-deep);color:#fff;display:flex;flex-direction:column}
-.hero-media img{width:100%;height:280px;object-fit:cover;object-position:center}
+/* Home hero — mobile: stacked flow (photo, then content, then
+   stats). Desktop switches to the overlay treatment: text over
+   the photo behind a gradient, stat band along the bottom.
+   (The pre-restyle hero, restored Oct 21 at aryan's request —
+   layout and photo are the old ones; the current Source Serif 4
+   / Inter typefaces are kept.) */
+.hero{position:relative;background:var(--green-deep);color:#fff;overflow:hidden;display:flex;flex-direction:column}
+.hero-media img{width:100%;height:300px;object-fit:cover;object-position:center}
 .hero-overlay{display:none}
-.hero-content{width:min(1120px,100% - 2.5rem);margin-inline:auto;padding:1.7rem 0 1.9rem}
-.hero h1{color:#fff;font-size:2.3rem;margin-bottom:.35rem}
+.hero-content{position:relative;padding:1.5rem 1.25rem 1.7rem}
+.hero h1{color:#fff;font-size:2.35rem;margin-bottom:.3rem}
 .hero-tagline{
-  font-family:"Source Serif 4",Georgia,serif;font-weight:500;font-size:1.3rem;
-  color:#EDEAE0;margin-bottom:.4rem;
+  font-family:"Source Serif 4",Georgia,serif;font-weight:500;font-size:1.25rem;
+  color:#EDEAE0;margin-bottom:.35rem;
 }
-.hero-motto{color:#D8E6DC;font-size:.93rem;margin-bottom:.6rem}
-.hero-sub{color:#E4EEE7;max-width:580px;font-size:1rem}
-.hero-ctas{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.25rem}
-.hero .btn-green{background:#fff;color:var(--green-deep)}
-.hero .btn-green:hover{background:var(--cream)}
+.hero-motto{color:#D8E6DC;font-size:.92rem;margin-bottom:.6rem}
+.hero-sub{color:#E4EEE7;max-width:560px;font-size:1.02rem}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.2rem}
 .stat-band{
-  width:min(1120px,100% - 2.5rem);margin-inline:auto;
-  display:grid;grid-template-columns:repeat(2,1fr);
+  position:relative;display:grid;grid-template-columns:repeat(2,1fr);
+  background:rgba(11,32,24,.88);border-top:1px solid rgba(201,162,39,.45);
 }
-.stat{padding:.95rem .9rem;border-top:1px solid rgba(255,255,255,.12)}
+.stat{padding:.8rem 1rem;text-align:center}
 .stat strong{
   display:block;font-family:"Source Serif 4",Georgia,serif;font-weight:600;
   font-size:1.08rem;color:#fff;
@@ -395,13 +397,13 @@ section[id],article[id],figure[id]{scroll-margin-top:132px}
   body{padding-bottom:0}
   .mobile-bar{display:none}
   h2{font-size:2.05rem}
-  .hero-media img{height:460px}
-  .hero-content{padding:2.3rem 0 2.5rem}
-  .hero h1{font-size:3.05rem}
-  .hero-tagline{font-size:1.5rem}
-  .stat-band{grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.2)}
-  .stat{border-top:0;border-left:1px solid rgba(255,255,255,.16);padding:1.05rem 1.1rem}
-  .stat:first-child{border-left:0;padding-left:0}
+  .hero{display:block}
+  .hero-media img{height:600px}
+  .hero-overlay{display:block;position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,32,24,.25) 0%,rgba(11,32,24,.55) 55%,rgba(11,32,24,.92) 100%)}
+  .hero-content{position:absolute;inset:auto 0 118px 0;left:50%;transform:translateX(-50%);width:min(1120px,100% - 2.5rem);padding:0}
+  .hero h1{font-size:3.2rem}
+  .hero-tagline{font-size:1.45rem}
+  .stat-band{position:absolute;left:50%;transform:translateX(-50%);bottom:0;width:min(1120px,100% - 2.5rem);grid-template-columns:repeat(4,1fr);border-radius:14px 14px 0 0}
   .page-hero{padding:3.4rem 0 2.9rem}
   .page-hero h1{font-size:2.65rem}
   .about-grid{grid-template-columns:1fr 1.2fr;align-items:center}
