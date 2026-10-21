@@ -16,6 +16,8 @@ browser, or serve the folder with any static server.
 | Gallery | `gallery.html` |
 | News & Notices | `news.html` |
 | Contact | `contact.html` |
+| Director's Message (blank — reserved) | `directors-message.html` |
+| Online Application (full form) | `application.html` |
 
 Every page shares the same header (school crest + navigation), footer and
 sticky mobile Call / Enquire bar — all rendered by `app.js` from `content.js`.

@@ -306,6 +306,34 @@ body[data-page="home"] .about-media img{border-radius:16px}
 .enquiry-form input:focus,.enquiry-form select:focus,.enquiry-form textarea:focus{outline:2px solid var(--green);outline-offset:1px}
 .optional{font-weight:400;color:var(--muted)}
 .form-success{margin-top:1rem;background:#E7F2EA;border:1px solid var(--green);color:var(--green-dark);border-radius:var(--radius);padding:.9rem 1rem;font-weight:600}
+
+/* Online application form — green section bands (the school
+   form's own section headers, in the site palette) and a
+   two-column field grid on wider screens. */
+.apply-form .form-band{
+  background:var(--green);color:#fff;font-size:1rem;font-weight:600;
+  padding:.6rem 1rem;border-radius:var(--radius);margin:1.5rem 0 1.1rem;
+}
+.apply-form .form-band:first-of-type{margin-top:.3rem}
+.apply-grid{display:grid;gap:0}
+.req{color:#C0392B}
+@media (min-width:760px){
+  .apply-grid{grid-template-columns:1fr 1fr;column-gap:1.4rem}
+}
+
+/* Director's message — reserved slot (blank until the school
+   provides the photograph and the message). */
+.director-slot{display:grid;gap:1.4rem}
+.director-photo{
+  aspect-ratio:4/5;margin:0;border:1px dashed #B9AE8E;background:#fff;border-radius:var(--radius);
+  display:flex;align-items:center;justify-content:center;text-align:center;padding:1rem;
+  color:var(--muted);font-size:.82rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;
+}
+.director-message{border:1px solid var(--line);background:#fff;border-radius:var(--radius);padding:1.5rem;min-height:220px}
+.slot-note{color:var(--muted)}
+@media (min-width:760px){
+  .director-slot{grid-template-columns:300px 1fr;align-items:start}
+}
 .faq-list{display:grid;gap:0;border-top:1px solid var(--line)}
 .faq-item{background:transparent;border:0;border-bottom:1px solid var(--line);border-radius:0;padding:1.25rem 0;box-shadow:none}
 .faq-item p{color:var(--muted);font-size:.95rem;margin-top:.35rem;max-width:760px}

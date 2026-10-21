@@ -64,6 +64,7 @@ const SITE = {
       label: "Admissions", href: "admissions.html", key: "admissions",
       children: [
         { label: "Admission Process", href: "admissions.html#process" },
+        { label: "Online Application", href: "application.html" },
         { label: "Enquiry Form", href: "admissions.html#enquire" },
         { label: "Documents Required", href: "admissions.html#documents" },
         { label: "Fees", href: "admissions.html#fees" },
@@ -79,7 +80,8 @@ const SITE = {
         { label: "Middle School", href: "academics.html#middle" },
         { label: "Senior School — ICSE & ISC", href: "academics.html#senior" },
         { label: "Teaching Approach", href: "academics.html#teaching" },
-        { label: "Labs & Learning Spaces", href: "academics.html#labs" }
+        { label: "Labs & Learning Spaces", href: "academics.html#labs" },
+        { label: "Director's Message", href: "directors-message.html" }
       ]
     },
     {
@@ -354,6 +356,33 @@ const SITE = {
     subjectsNote: "Core subjects across the stages follow the standard CISCE curriculum — English, Hindi, Mathematics, Science, Social Studies and Computer Education, with Sanskrit/third language and value education as prescribed by the Council."
   },
 
+  /* ================= DIRECTOR'S MESSAGE PAGE =================
+     Reserved page — aryan asked for it blank (Oct 22, 2026): the
+     Director's message and photograph go here when the school
+     provides them. Do NOT invent a director's name, photograph or
+     message. (The only leadership name on record anywhere is the
+     principal's, from government records, and it stays off-site.) */
+  directorsMessagePage: {
+    heroEyebrow: "Academics",
+    heroTitle: "Director's Message to Prospective Parents",
+    heroIntro: "",
+    photoLabel: "Director's photograph",
+    slotNote: "The Director's message to prospective parents will be published on this page."
+  },
+
+  /* ================= ONLINE APPLICATION PAGE =================
+     The full application form, mirroring the school's application
+     format (fields as on the school's form — aryan's screenshot,
+     Oct 22, 2026). Demo form: submissions are not sent anywhere. */
+  applicationPage: {
+    heroEyebrow: "Admissions",
+    heroTitle: "Online Application",
+    heroIntro: "Fill in the application form below — student details and correspondence address, the way the school office needs them. Fields marked * are required.",
+    formNote: "Demo form — in this demo your application is not sent anywhere. On the live site it will reach the school office.",
+    button: "Submit Application",
+    success: "Thank you! Your application has been noted. The school office will contact you on your WhatsApp number. (Demo — nothing was actually sent.)"
+  },
+
   /* ================= ADMISSIONS PAGE ================= */
   admissionsPage: {
     heroEyebrow: "Admissions",
@@ -396,6 +425,11 @@ const SITE = {
       note: "Demo form — in this demo your enquiry is not sent anywhere. On the live site it will reach the school office.",
       button: "Send Enquiry",
       success: "Thank you! Your enquiry has been noted. The school office will contact you. (Demo — nothing was actually sent.)"
+    },
+    applyCard: {
+      heading: "Online Application",
+      text: "Ready to apply in one go? Fill the full application form online — student details and correspondence address, all in one place.",
+      button: "Open the Application Form"
     }
   },
 

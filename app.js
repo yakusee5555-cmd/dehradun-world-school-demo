@@ -325,6 +325,10 @@
     set("documentsNote", A.documentsNote);
     fill("documentsList", A.documents.map(function (d) { return "<li>" + esc(d) + "</li>"; }).join(""));
     set("datesNote", A.datesNote);
+    set("applyHeading", A.applyCard.heading);
+    set("applyText", A.applyCard.text);
+    var apb = el("applyBtn");
+    if (apb) { apb.textContent = A.applyCard.button; apb.href = "application.html"; }
     set("formHeading", A.form.heading);
     set("formNote", A.form.note);
     set("formButton", A.form.button);
@@ -431,12 +435,39 @@
     ab.textContent = C.admissionsCard.buttonText; ab.href = "admissions.html";
   }
 
+  function renderDirectorsMessage() {
+    var D = S.directorsMessagePage;
+    fill("pageHero", pageHero(D.heroEyebrow, D.heroTitle, D.heroIntro));
+    set("directorPhotoLabel", D.photoLabel);
+    set("directorSlotNote", D.slotNote);
+  }
+
+  function renderApplication() {
+    var A = S.applicationPage;
+    fill("pageHero", pageHero(A.heroEyebrow, A.heroTitle, A.heroIntro));
+    set("applyNote", A.formNote);
+    set("applyButton", A.button);
+    var form = el("applyForm");
+    if (form) {
+      form.addEventListener("submit", function (ev) {
+        ev.preventDefault();
+        if (!form.checkValidity()) { form.reportValidity(); return; }
+        var ok = el("applySuccess");
+        ok.textContent = A.success;
+        ok.hidden = false;
+        form.reset();
+        ok.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+    }
+  }
+
   chrome();
   var renderers = {
     home: renderHome, about: renderAbout, academics: renderAcademics,
     admissions: renderAdmissions, campus: renderCampus,
     "school-life": renderSchoolLife, gallery: renderGallery,
-    news: renderNews, contact: renderContact
+    news: renderNews, contact: renderContact,
+    "directors-message": renderDirectorsMessage, application: renderApplication
   };
   if (renderers[page]) renderers[page]();
 })();
