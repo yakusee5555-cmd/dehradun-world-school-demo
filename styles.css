@@ -416,8 +416,8 @@ body[data-page="home"] .about-media img{border-radius:16px}
   flex:1;text-align:center;text-decoration:none;font-weight:700;
   padding:1rem .5rem;font-size:.85rem;letter-spacing:.07em;text-transform:uppercase;
 }
-.mobile-call{background:var(--green);color:#fff}
-.mobile-enquire{background:var(--green-deep);color:#fff;border-left:1px solid rgba(255,255,255,.3)}
+.mobile-call{background:#fff;color:var(--green-deep)}
+.mobile-enquire{background:var(--green-deep);color:#fff;border-left:1px solid rgba(201,162,39,.5)}
 
 /* Layout grids (desktop widths) */
 @media (min-width:900px){
