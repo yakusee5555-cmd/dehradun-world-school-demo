@@ -191,6 +191,19 @@ const SITE = {
       directionsText: "Get Directions",
       directionsHref: "https://www.google.com/maps/dir/?api=1&destination=Dehradun+World+School+Bagicha+Nathuawala+Raipur+Balawala+Road+Dehradun+248008"
     },
+    /* Director's Welcome — home page. Name supplied by aryan
+       (Oct 22, 2026). Welcome TEXT left blank at his ask, and
+       there is no photograph of the Director yet — both are
+       reserved slots; drop them in here when they arrive. */
+    directorWelcome: {
+      eyebrow: "Director's Welcome",
+      heading: "A word of welcome",
+      text: "",
+      slotNote: "The Director's welcome message will appear here.",
+      photoLabel: "Director's photograph",
+      name: "Mr Hamendra Singh Dawaan",
+      role: "Director"
+    },
     facebookCard: {
       heading: "Follow the school on Facebook",
       text: "Celebrations, events and everyday moments from campus — the school's official Facebook page is where DWS shares them first.",

@@ -254,6 +254,14 @@
     if (mf) { mf.src = V.mapEmbed; mf.title = V.mapTitle; }
     var dl = el("directionsLink");
     if (dl) { dl.textContent = V.directionsText; dl.href = V.directionsHref; }
+
+    var DW = H.directorWelcome;
+    fill("dwHead", sectionHead(DW.eyebrow, DW.heading));
+    fill("dwText", DW.text ? "<p>" + esc(DW.text) + "</p>"
+      : '<p class="dw-note">' + esc(DW.slotNote) + "</p>");
+    set("dwPhotoLabel", DW.photoLabel);
+    set("dwName", DW.name);
+    set("dwRole", DW.role);
   }
 
   function renderAbout() {
