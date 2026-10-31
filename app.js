@@ -104,16 +104,65 @@
   }
 
   /* ---------- Shared building blocks ---------- */
-  function pillarCards() {
-    return S.pillars.items.map(function (p) {
-      return '<article class="card pillar-card"><span class="monogram">' + esc(p.initial) + "</span><h3>" +
-        esc(p.title) + "</h3><p>" + esc(p.text) + "</p></article>";
-    }).join("");
-  }
   function sectionHead(eyebrow, heading, intro, light) {
     return '<p class="eyebrow' + (light ? " eyebrow-light" : "") + '">' + esc(eyebrow) + "</p><h2>" +
       esc(heading) + "</h2>" + (intro ? '<p class="section-intro">' + esc(intro) + "</p>" : "");
   }
+  function initTestCarousel(items) {
+    var wrap = el("testCarousel"), track = el("testTrack"), dotsBox = el("testDots");
+    if (!wrap || !track || !items || !items.length) return;
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var page = 0, timer = null, pages = 1, perView = 1;
+    function card(t) {
+      return '<article class="card test-card"><div class="quote-mark" aria-hidden="true">&ldquo;</div><blockquote>“' +
+        esc(t.quote) + '”</blockquote><p class="test-name">— ' + esc(t.name) + "</p></article>";
+    }
+    function build() {
+      perView = window.innerWidth >= 900 ? 3 : 1;
+      pages = Math.ceil(items.length / perView);
+      track.innerHTML = "";
+      for (var p = 0; p < pages; p++) {
+        var pg = document.createElement("div");
+        pg.className = "test-page";
+        pg.innerHTML = items.slice(p * perView, (p + 1) * perView).map(card).join("");
+        track.appendChild(pg);
+      }
+      dotsBox.innerHTML = "";
+      for (var d = 0; d < pages; d++) {
+        (function (n) {
+          var b = document.createElement("button");
+          b.type = "button";
+          b.className = "test-dot" + (n === 0 ? " is-active" : "");
+          b.setAttribute("aria-label", "Go to testimonials page " + (n + 1));
+          b.addEventListener("click", function () { go(n); restart(); });
+          dotsBox.appendChild(b);
+        })(d);
+      }
+      page = Math.min(page, pages - 1);
+      go(page, true);
+    }
+    function go(n, instant) {
+      page = (n + pages) % pages;
+      track.style.transition = instant ? "none" : "";
+      track.style.transform = "translateX(-" + (page * 100) + "%)";
+      if (instant) { void track.offsetWidth; track.style.transition = ""; }
+      var ds = dotsBox.children, i;
+      for (i = 0; i < ds.length; i++) ds[i].classList.toggle("is-active", i === page);
+    }
+    function restart() {
+      if (timer) { clearInterval(timer); timer = null; }
+      if (!reduce && pages > 1) timer = setInterval(function () { go(page + 1); }, 5500);
+    }
+    el("testPrev").addEventListener("click", function () { go(page - 1); restart(); });
+    el("testNext").addEventListener("click", function () { go(page + 1); restart(); });
+    wrap.addEventListener("mouseenter", function () { if (timer) { clearInterval(timer); timer = null; } });
+    wrap.addEventListener("mouseleave", restart);
+    var rt;
+    window.addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(build, 200); });
+    build();
+    restart();
+  }
+
   function testCards(items) {
     return items.map(function (t) {
       return '<article class="card test-card"><div class="quote-mark" aria-hidden="true">&ldquo;</div><blockquote>“' +
@@ -263,9 +312,6 @@
     var wl = el("welcomeLink");
     wl.textContent = H.welcome.linkText; wl.href = H.welcome.linkHref;
 
-    fill("pillarsHead", sectionHead(S.pillars.eyebrow, S.pillars.heading));
-    fill("pillarCards", pillarCards());
-
     fill("stagesHead", sectionHead(H.stagesHeading.eyebrow, H.stagesHeading.heading, H.stagesHeading.intro));
     fill("stageCards", S.academicsPage.stages.map(function (st) {
       return '<article class="card stage-mini"><span class="card-tag-static">' + esc(st.tag) + "</span><h3>" +
@@ -290,7 +336,7 @@
     evl.textContent = H.eventsHeading.linkText; evl.href = H.eventsHeading.linkHref;
 
     fill("testHead", sectionHead(S.testimonials.eyebrow, S.testimonials.heading));
-    fill("testCards", testCards(S.testimonials.items.slice(0, 3)));
+    initTestCarousel(S.testimonials.items);
     fill("noticePreview", noticeList(S.newsPage.notices));
     fill("fbSlot", facebookCard());
 
@@ -328,9 +374,6 @@
       return '<article class="card pillar-card"><span class="monogram">' + esc(m.initial) + "</span><h3>" +
         esc(m.title) + "</h3><p>" + esc(m.text) + "</p></article>";
     }).join(""));
-
-    fill("pillarsHead", sectionHead(S.pillars.eyebrow, S.pillars.heading));
-    fill("pillarCards", pillarCards());
 
     set("crestEyebrow", A.crest.eyebrow);
     set("crestHeading", A.crest.heading);

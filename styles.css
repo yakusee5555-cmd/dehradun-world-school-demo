@@ -452,6 +452,23 @@ body[data-page="home"] .about-media img{border-radius:16px}
 .test-card blockquote{font-size:.99rem;color:#33413A}
 .test-name{margin-top:.9rem;font-weight:700;color:var(--green-dark);font-size:.9rem}
 
+/* Testimonials carousel — all 6 real parent reviews, auto-playing */
+.test-carousel{position:relative}
+.test-viewport{overflow:hidden}
+.test-track{display:flex;transition:transform .65s cubic-bezier(.22,.8,.3,1)}
+.test-page{flex:0 0 100%;display:grid;gap:1rem;grid-template-columns:1fr;padding:.25rem}
+@media(min-width:900px){.test-page{grid-template-columns:repeat(3,1fr)}}
+.test-arrow{position:absolute;top:38%;z-index:2;width:40px;height:40px;border-radius:50%;
+  border:1px solid rgba(27,67,50,.35);background:rgba(255,255,255,.92);color:var(--green-deep);
+  font-size:1.4rem;line-height:1;cursor:pointer;padding:0;box-shadow:0 2px 8px rgba(11,32,24,.12)}
+.test-prev{left:-.4rem}
+.test-next{right:-.4rem}
+.test-arrow:hover{background:var(--green-deep);color:#fff}
+.test-dots{display:flex;gap:.55rem;justify-content:center;margin-top:1.1rem}
+.test-dot{width:11px;height:11px;border-radius:50%;border:1px solid var(--green-deep);background:transparent;cursor:pointer;padding:0}
+.test-dot.is-active{background:var(--gold);border-color:var(--gold)}
+@media (prefers-reduced-motion:reduce){.test-track{transition:none}}
+
 /* Notices — flat rows with hairlines */
 .notice-list{display:grid;gap:0;border-top:1px solid var(--line)}
 .notice{

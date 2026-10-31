@@ -76,13 +76,6 @@
     </div>
   </section>
 
-  <section class="section section-tint">
-    <div class="container">
-      <div id="pillarsHead"></div>
-      <div class="card-row" id="pillarCards"></div>
-    </div>
-  </section>
-
   <section class="section">
     <div class="container">
       <div id="stagesHead"></div>
@@ -110,7 +103,12 @@
   <section class="section section-tint">
     <div class="container">
       <div id="testHead"></div>
-      <div class="card-row flex-3" id="testCards"></div>
+      <div class="test-carousel" id="testCarousel" aria-roledescription="carousel" aria-label="Parent testimonials">
+        <div class="test-viewport"><div class="test-track" id="testTrack"></div></div>
+        <button class="test-arrow test-prev" id="testPrev" aria-label="Previous testimonials">&#8249;</button>
+        <button class="test-arrow test-next" id="testNext" aria-label="Next testimonials">&#8250;</button>
+        <div class="test-dots" id="testDots"></div>
+      </div>
     </div>
   </section>
 

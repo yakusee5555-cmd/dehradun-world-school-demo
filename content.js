@@ -170,7 +170,7 @@ const SITE = {
       linkText: "See the full campus",
       linkHref: "campus.html",
       /* Titles must match entries in campus.facilities below. */
-      picks: ["Library", "Atal Tinkering Lab", "Science Lab", "Playground", "CCTV-Secured Campus", "Medical Check-ups"]
+      picks: ["Library", "Science Lab", "Playground", "CCTV-Secured Campus", "Medical Check-ups"]
     },
     eventsHeading: {
       eyebrow: "School life",
@@ -205,18 +205,6 @@ const SITE = {
       text: "Celebrations, events and everyday moments from campus — the school's official Facebook page is where DWS shares them first.",
       buttonText: "Visit the Facebook page"
     }
-  },
-
-  /* ---------- Pillars (used on Home + About) ---------- */
-  pillars: {
-    eyebrow: "How a child grows here",
-    heading: "Four pillars of a DWS education",
-    items: [
-      { initial: "L", title: "Learn", text: "Intellectual growth through a CISCE curriculum designed by IIT alumni — strong concepts, not rote learning." },
-      { initial: "P", title: "Play", text: "Physical development through playgrounds, sport and active days — a healthy body for a healthy mind." },
-      { initial: "G", title: "Grow", text: "Social growth in a nurturing, co-educational environment where children learn to work and live together." },
-      { initial: "C", title: "Character", text: "Spiritual and moral grounding — values, tolerance and compassion are taught as seriously as subjects." }
-    ]
   },
 
   /* ================= ABOUT PAGE ================= */
@@ -344,7 +332,6 @@ const SITE = {
       eyebrow: "Learning by doing",
       heading: "Labs that make concepts real",
       items: [
-        { initial: "AT", title: "Atal Tinkering Lab", image: "images/fac-tinkering.jpg", imageAlt: "Illustrative photo — students building with electronics in a tinkering lab", text: "A dedicated innovation lab where students build, test and tinker — the hands-on heart of the middle and senior school." },
         { initial: "Sc", title: "Integrated Science Lab", image: "images/fac-science.jpg", imageAlt: "Illustrative photo — students doing a science experiment", text: "Experiments that turn textbook science into something students can see, touch and question." },
         { initial: "ICT", title: "ICT & Computer Lab", image: "images/fac-ict.jpg", imageAlt: "Illustrative photo — students working in a computer lab", text: "Computer learning with internet access — digital skills taught as a subject, not an afterthought." }
       ]
@@ -470,12 +457,10 @@ const SITE = {
       { initial: "Li", title: "Library", image: "images/fac-library.jpg", imageAlt: "Illustrative photo — children reading in a school library", text: "A school library that builds the reading habit from the earliest classes." },
       { initial: "ICT", title: "ICT & Computer Lab", image: "images/fac-ict.jpg", imageAlt: "Illustrative photo — students working in a computer lab", text: "Computer learning with internet access — 50 functional computers on campus, per government records." },
       { initial: "Sc", title: "Science Lab", image: "images/fac-science.jpg", imageAlt: "Illustrative photo — students doing a science experiment", text: "An integrated science laboratory for hands-on experiments." },
-      { initial: "AT", title: "Atal Tinkering Lab", image: "images/fac-tinkering.jpg", imageAlt: "Illustrative photo — students building with electronics in a tinkering lab", text: "A dedicated innovation lab where students build, test and tinker." },
       { initial: "Cl", title: "45 Classrooms", image: "images/fac-classrooms.jpg", imageAlt: "Illustrative photo — a bright, ventilated classroom", text: "Large, ventilated classrooms across five building blocks — 45 classrooms in good condition, per government records." },
       { initial: "Sp", title: "Playground", image: "images/real/up-ground-gathering.jpg", imageAlt: "The whole school gathered on the school ground — a Dehradun World School photograph", text: "A vast playground, with ample play space in the preschool wing and primary block." },
       { initial: "Se", title: "CCTV-Secured Campus", image: "images/fac-cctv.jpg", imageAlt: "Illustrative photo — a CCTV camera mounted on a wall", imagePos: "center 25%", text: "Round-the-clock CCTV surveillance, indoors and outdoors, across the campus." },
       { initial: "Me", title: "Medical Check-ups", image: "images/fac-medical.jpg", imageAlt: "Illustrative photo — a school health check-up", text: "Regular medical check-ups for students on campus." },
-      { initial: "Gr", title: "Green Campus", image: "images/fac-green.jpg", imageAlt: "Illustrative photo — solar panels on a rooftop", text: "Solar power and rain-water harvesting built into the campus." },
       { initial: "Sa", title: "Safe & Accessible by Design", image: "images/fac-safe.jpg", imageAlt: "Illustrative photo — a preschool classroom with small, child-sized furniture", text: "Preschool rooms with see-through doors, cushioned floors and soft-corner furniture — plus ramps and handrails for accessibility, and clean drinking water." }
     ],
     photos: {
@@ -492,7 +477,7 @@ const SITE = {
     sports: {
       eyebrow: "Sports facilities",
       heading: "Room to run, courts to play on",
-      intro: "Physical development is one of the school's four pillars — and the campus gives it space.",
+      intro: "Physical development matters here — and the campus gives it space.",
       items: [
         { initial: "Ba", title: "Basketball Court", image: "images/fac-basketball.jpg", imageAlt: "Illustrative photo — students playing on an outdoor basketball court", text: "An outdoor basketball court for games periods, practice and inter-house play." },
         { initial: "Bd", title: "Badminton Court", image: "images/fac-badminton.jpg", imageAlt: "Illustrative photo — an indoor badminton hall", text: "A badminton court for a sport Dehradun loves — quick feet, quicker minds." },
@@ -599,7 +584,7 @@ const SITE = {
     sports: {
       eyebrow: "Sports & games",
       heading: "Play is a pillar, not a break",
-      intro: "Physical development is one of the four pillars of a DWS education. On campus, children play on the basketball court and the badminton court, compete at indoor games, and run free on the playground.",
+      intro: "Physical development is central to a DWS education. On campus, children play on the basketball court and the badminton court, compete at indoor games, and run free on the playground.",
       items: [
         { title: "Basketball", text: "Court games in sports periods and after-class play." },
         { title: "Badminton", text: "A court of their own for a game that rewards speed and focus." },
