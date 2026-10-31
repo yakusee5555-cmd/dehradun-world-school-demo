@@ -170,7 +170,7 @@ const SITE = {
       linkText: "See the full campus",
       linkHref: "campus.html",
       /* Titles must match entries in campus.facilities below. */
-      picks: ["Library", "Science Lab", "Playground", "CCTV-Secured Campus", "Medical Check-ups"]
+      picks: ["Main School Building", "Library", "Science Lab", "Playground", "CCTV-Secured Campus", "Medical Check-ups"]
     },
     eventsHeading: {
       eyebrow: "School life",
@@ -454,6 +454,7 @@ const SITE = {
     heroIntro: "A full campus at Nathuawala — classrooms, laboratories, a library, playing fields and a security-first design, in the foothills of Dehradun.",
     heading: "Facilities on campus",
     facilities: [
+      { initial: "MB", title: "Main School Building", image: "images/real/main-building.jpg", imageAlt: "Dehradun World School — the main school building, a Dehradun World School photograph", text: "The heart of the campus at Nathuawala — home to the school's classrooms, labs and daily life." },
       { initial: "Li", title: "Library", image: "images/fac-library.jpg", imageAlt: "Illustrative photo — children reading in a school library", text: "A school library that builds the reading habit from the earliest classes." },
       { initial: "ICT", title: "ICT & Computer Lab", image: "images/fac-ict.jpg", imageAlt: "Illustrative photo — students working in a computer lab", text: "Computer learning with internet access — 50 functional computers on campus, per government records." },
       { initial: "Sc", title: "Science Lab", image: "images/fac-science.jpg", imageAlt: "Illustrative photo — students doing a science experiment", text: "An integrated science laboratory for hands-on experiments." },
