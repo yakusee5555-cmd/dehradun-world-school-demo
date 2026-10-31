@@ -38,6 +38,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
   outline:2px solid var(--green);outline-offset:2px;
 }
 .container{width:min(1120px,100% - 2.5rem);margin-inline:auto}
+/* Wide container — sections that should span toward the viewport edges
+   (Director's Welcome, aryan's call Oct 31, 2026). */
+.container-wide{width:min(1500px,100% - 2.5rem)}
 .section{padding:3.25rem 0}
 .section-tight{padding:2.2rem 0}
 .section-tint{background:var(--cream)}
