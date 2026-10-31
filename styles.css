@@ -74,16 +74,6 @@ section[id],article[id],figure[id]{scroll-margin-top:132px}
 .eyebrow::before{content:"";display:inline-block;width:26px;height:1px;background:var(--gold);vertical-align:middle;margin-right:.55rem}
 .eyebrow-light{color:#CFE3D6}
 
-/* Top bar */
-.topbar{
-  background:var(--green-deep);color:#EAF2EC;font-size:.82rem;
-  display:flex;flex-wrap:wrap;gap:.3rem .9rem;align-items:center;justify-content:space-between;
-  padding:.45rem 1.25rem;
-}
-.topbar a{color:#fff;text-decoration:none;font-weight:600}
-.topbar-links{display:flex;gap:1rem;align-items:center}
-.topbar-cta{border-bottom:1px solid var(--gold);padding:0;color:#fff!important}
-
 /* Header — cream brand row over a deep-green nav strip with
    gold borders (aryan's calls, Oct 21): the all-green header
    camouflaged against the green page heroes, so the brand row
@@ -167,13 +157,34 @@ section[id],article[id],figure[id]{scroll-margin-top:132px}
    exists only on the home page, so these rules touch nothing
    else. Typefaces stay Source Serif 4 / Inter. */
 .hero{position:relative;background:var(--green-deep);color:#fff;overflow:hidden}
-.hero-media img{width:100%;height:640px;object-fit:cover;object-position:center}
-.hero-overlay{display:block;position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,32,24,.25) 0%,rgba(11,32,24,.55) 55%,rgba(11,32,24,.92) 100%)}
-.hero-content{position:absolute;left:0;right:0;bottom:224px;padding:0 1.25rem}
-.hero h1{color:#fff;font-size:2.35rem;margin-bottom:.5rem}
-.hero-tagline,.hero-motto{display:none}
-.hero-sub{color:#E4EEE7;max-width:560px;font-size:1.02rem}
-.hero-ctas{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.2rem}
+/* Hero slider — like the school's own site: full-width auto-playing
+   slides, caption box with headline, dots + arrows. */
+.hero-slider{position:relative;height:640px;overflow:hidden;background:var(--green-deep)}
+.hero-slides{position:absolute;inset:0}
+.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.1s ease}
+.hero-slide.is-active{opacity:1}
+.hero-slide img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+.hero-slider::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(11,32,24,.15) 0%,rgba(11,32,24,.38) 55%,rgba(11,32,24,.88) 100%)}
+.hero-caption{position:absolute;z-index:2;left:0;right:0;bottom:210px;padding:0 1.25rem}
+.hero-eyebrow{color:var(--gold);font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.55rem}
+.hero-caption h2{color:#fff;font-size:1.85rem;line-height:1.22;max-width:620px;margin:0 0 1.1rem}
+.hero-caption h2.cap-in{animation:capRise .7s ease both}
+@keyframes capRise{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:.7rem}
+.hero-arrow{position:absolute;z-index:3;top:40%;width:44px;height:44px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.55);background:rgba(11,32,24,.35);color:#fff;
+  font-size:1.6rem;line-height:1;cursor:pointer;padding:0}
+.hero-prev{left:.8rem}
+.hero-next{right:.8rem}
+.hero-arrow:hover{background:var(--green-deep)}
+.hero-dots{position:absolute;z-index:3;left:0;right:0;bottom:184px;display:flex;gap:.55rem;justify-content:center}
+.hero-dot{width:11px;height:11px;border-radius:50%;border:1px solid rgba(255,255,255,.8);background:transparent;cursor:pointer;padding:0}
+.hero-dot.is-active{background:var(--gold);border-color:var(--gold)}
+@media (prefers-reduced-motion:reduce){
+  .hero-slide{transition:none}
+  .hero-caption h2.cap-in{animation:none}
+}
 .stat-band{
   position:absolute;left:.9rem;right:.9rem;bottom:.9rem;
   display:grid;grid-template-columns:repeat(2,1fr);
@@ -492,9 +503,11 @@ body[data-page="home"] .about-media img{border-radius:16px}
 /* Layout grids (desktop widths) */
 @media (min-width:900px){
   h2{font-size:2.05rem}
-  .hero-media img{height:600px}
-  .hero-content{inset:auto 0 118px 0;left:50%;right:auto;transform:translateX(-50%);width:min(1120px,100% - 2.5rem);padding:0}
-  .hero h1{font-size:3.2rem}
+  .hero-slider{height:600px}
+  .hero-caption{left:50%;right:auto;transform:translateX(-50%);width:min(1120px,100% - 2.5rem);padding:0;bottom:158px}
+  .hero-caption h2{font-size:2.9rem;max-width:760px}
+  .hero-dots{bottom:128px}
+  .hero-arrow{top:44%}
   .stat-band{left:50%;right:auto;transform:translateX(-50%);bottom:0;width:min(1120px,100% - 2.5rem);grid-template-columns:repeat(4,1fr);border-radius:14px 14px 0 0}
   .page-hero{padding:3.4rem 0 2.9rem}
   .page-hero h1{font-size:2.65rem}

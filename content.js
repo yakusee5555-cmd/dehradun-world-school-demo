@@ -120,21 +120,21 @@ const SITE = {
     { label: "Contact", href: "contact.html", key: "contact" }
   ],
 
-  /* ---------- Top bar ---------- */
-  topbar: {
-    text: "Admissions Open — Pre-Primary to Class 12",
-    ctaText: "Enquire Now",
-    ctaHref: "admissions.html"
-  },
-
   /* ================= HOME PAGE ================= */
   home: {
     hero: {
-      image: "images/real/hero-school.jpg",
-      imageAlt: "Dehradun World School — the main school building and the school ground",
-      title: "Dehradun World School",
-      tagline: "Discover the world of knowledge",
-      subtitle: "A modern education and a nurturing environment where every child grows — intellectually, physically, socially and spiritually.",
+      /* Slider hero, modelled on the school's own website (dehradunworldschool.com):
+         full-width auto-playing slides, each with a caption headline.
+         All photos are the school's own. Captions echo the real site's
+         themes in our own words. */
+      eyebrow: "Affiliated to the Council for the Indian School Certificate Examinations, New Delhi",
+      slides: [
+        { image: "images/real/hero-school.jpg", alt: "Dehradun World School — the main school building and the school ground", headline: "A clean, green campus — perfect for learning." },
+        { image: "images/real/up-field-games.jpg", alt: "Students playing field games on the school ground", headline: "Healthy bodies, active minds." },
+        { image: "images/real/main-building-book-fair.jpg", alt: "The main school building during a book fair", headline: "A strong academic foundation, Pre-Primary to Class XII." },
+        { image: "images/real/up-stage-dance.jpg", alt: "Students performing on the school stage", headline: "Where young talent takes the stage." },
+        { image: "images/real/up-toppers-2025.jpg", alt: "The school's 2024–25 toppers board, with photographs of the ICSE and ISC toppers and their percentages", headline: "Discover the world of knowledge." }
+      ],
       primaryCta: "Enquire for Admission",
       primaryHref: "admissions.html",
       secondaryCta: "Call the School",

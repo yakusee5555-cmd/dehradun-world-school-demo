@@ -22,12 +22,6 @@
 
   /* ---------- Shared chrome ---------- */
   function chrome() {
-    set("topbarText", S.topbar.text);
-    var tp = el("topbarPhone");
-    if (tp) { tp.textContent = S.school.phoneDisplay; tp.href = S.school.phoneLink; }
-    var tc = el("topbarCta");
-    if (tc) { tc.textContent = S.topbar.ctaText; tc.href = S.topbar.ctaHref; }
-
     /* Header nav with active-page state + dropdowns.
        Sections with children get a dropdown panel (desktop:
        hover / focus / caret click; mobile: accordion). The
@@ -196,16 +190,63 @@
     });
   }
 
+  function initHeroSlider(slides) {
+    var wrap = el("heroSlider"), box = el("heroSlides"), dotsBox = el("heroDots");
+    if (!wrap || !box || !slides || !slides.length) return;
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    slides.forEach(function (sl, i) {
+      var d = document.createElement("div");
+      d.className = "hero-slide" + (i === 0 ? " is-active" : "");
+      var img = document.createElement("img");
+      img.src = sl.image; img.alt = sl.alt || "";
+      if (i > 0) img.loading = "lazy";
+      d.appendChild(img);
+      box.appendChild(d);
+      var dot = document.createElement("button");
+      dot.className = "hero-dot" + (i === 0 ? " is-active" : "");
+      dot.type = "button";
+      dot.setAttribute("aria-label", "Go to slide " + (i + 1));
+      dot.addEventListener("click", function () { go(i); restart(); });
+      dotsBox.appendChild(dot);
+    });
+    var idx = 0, timer = null;
+    var cap = el("heroCaptionTitle");
+    function go(n) {
+      idx = (n + slides.length) % slides.length;
+      var slds = box.children, dots = dotsBox.children, i;
+      for (i = 0; i < slds.length; i++) slds[i].classList.toggle("is-active", i === idx);
+      for (i = 0; i < dots.length; i++) dots[i].classList.toggle("is-active", i === idx);
+      cap.classList.remove("cap-in");
+      void cap.offsetWidth; /* restart the rise animation */
+      cap.textContent = slides[idx].headline;
+      cap.classList.add("cap-in");
+    }
+    function restart() {
+      if (timer) { clearInterval(timer); timer = null; }
+      if (!reduce) timer = setInterval(function () { go(idx + 1); }, 6000);
+    }
+    el("heroPrev").addEventListener("click", function () { go(idx - 1); restart(); });
+    el("heroNext").addEventListener("click", function () { go(idx + 1); restart(); });
+    wrap.addEventListener("mouseenter", function () { if (timer) { clearInterval(timer); timer = null; } });
+    wrap.addEventListener("mouseleave", restart);
+    wrap.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowLeft") { go(idx - 1); restart(); }
+      if (e.key === "ArrowRight") { go(idx + 1); restart(); }
+    });
+    cap.classList.add("cap-in");
+    restart();
+  }
+
   /* ================= PAGE RENDERERS ================= */
 
   function renderHome() {
     var H = S.home;
-    el("heroImage").src = H.hero.image;
-    el("heroImage").alt = H.hero.imageAlt;
-    set("heroTitle", H.hero.title);
-    set("heroTagline", H.hero.tagline);
-    set("heroMotto", S.school.motto + " · " + S.school.mottoTranslation);
-    set("heroSub", H.hero.subtitle);
+    /* Hero slider — like the school's own site: full-width auto-playing
+       slides with a caption headline. Pauses on hover, respects
+       prefers-reduced-motion (static first slide). */
+    set("heroEyebrow", H.hero.eyebrow);
+    set("heroCaptionTitle", H.hero.slides[0].headline);
+    initHeroSlider(H.hero.slides);
     var hp = el("heroPrimary");
     hp.textContent = H.hero.primaryCta; hp.href = H.hero.primaryHref;
     var hs = el("heroSecondary");
@@ -241,8 +282,9 @@
     fl.textContent = H.facilitiesHeading.linkText; fl.href = H.facilitiesHeading.linkHref;
 
     fill("eventsHead", sectionHead(H.eventsHeading.eyebrow, H.eventsHeading.heading));
-    /* Skip the event that uses the hero photo — no image repeats on one page. */
-    var homeEvents = S.schoolLifePage.events.filter(function (ev) { return ev.image !== H.hero.image; }).slice(0, 3);
+    /* Skip events that reuse a hero slide photo — no image repeats on one page. */
+    var heroImgs = H.hero.slides.map(function (s) { return s.image; });
+    var homeEvents = S.schoolLifePage.events.filter(function (ev) { return heroImgs.indexOf(ev.image) === -1; }).slice(0, 3);
     fill("homeEvents", eventCards(homeEvents));
     var evl = el("eventsLink");
     evl.textContent = H.eventsHeading.linkText; evl.href = H.eventsHeading.linkHref;
